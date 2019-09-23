@@ -1,0 +1,16 @@
+# Configurations for an HTML output.
+HTML:
+  Default Output: {{default this.default true}}
+  Type of Data: HTML
+  File Extension: html
+  Template: {{template}}
+  XSLT Format: {{default format null}}
+  Publishable: {{default publishable yes}}
+  Include XML Declaration in Published Files: {{default xml false}}
+  Regions:
+    {{#each regions}}
+    {{@key}}:
+      block: {{default block false}}
+      format: {{default format false}}
+      inline: {{default inline false}}
+    {{/each}}

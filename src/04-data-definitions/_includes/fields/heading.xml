@@ -1,0 +1,8 @@
+---
+
+---
+
+{{#use 'heading'}}
+{{> heading--label}}
+{{> heading--level}}
+{{/use}}

@@ -1,0 +1,63 @@
+# Configurations for built-in fields.
+Built-in Fields:
+  Display Name:
+    Help Text: A shortened version of the page title. This may be used fot things like breadcrumbs and sitemaps.
+    Required: false
+    Visiblity: visible
+  Title:
+    Help Text: The title of the page. This will be displayed on page, in the browser's tab, in bookmarks, and in search results.
+    Required: true
+    Visibility: inline
+  Summary:
+    Help Text: A short explanation of this page to provide users with some context about the page's content. This may be used throughout the site on other pages.
+    Required: false
+    Visibility: visible
+  Teaser:
+    Help Text:
+    Required: true
+    Visiblity: hidden
+  Keywords:
+    Help Text:
+    Required: false
+    Visiblity: hidden
+  Description:
+    Help Text: A brief explanation of this what users can expect to learn from this page's contents. This may be used throughout the site on other pages, for search engine metadata, or appear in social media previews.
+    Required: false
+    Visiblity: inline
+  Author:
+    Help Text:
+    Required: false
+    Visiblity: hidden
+  Start Date:
+    Help Text:
+    Required: false
+    Visiblity: hidden
+  End Date:
+    Help Text:
+    Required: false
+    Visiblity: hidden
+  Expiration Folder:
+    Help Text:
+    Required: false
+    Visiblity: hidden
+  Review Date:
+    Help Text:
+    Required: false
+    Visiblity: inline
+
+# Configurations for custom fields.
+Custom Fields:
+    Goal:
+      Type: text
+      Name: goal
+      Help Text: A short explanation describing the purpose of this page. Be as specific as possible. This is only for internal use as a point of reference.
+      Required: false
+      Visiblity: inline
+    Audience:
+      Type: multiselect
+      Name: audience
+      Help Text: The target audience of this page. Select one or more that may apply. This is only for internal use as a point of reference.
+      Required: false
+      Visiblity: inline
+      Configuration: |
+        {{> audience}}

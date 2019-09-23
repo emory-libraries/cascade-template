@@ -1,0 +1,39 @@
+## Recursively find the page type for all pages within the site.
+#macro ( getPageTypes $xml $root )
+
+  ## Use the root by default.
+  #if ( $root != true and $root != false ) #set ( $root = true ) #end
+
+  ## Initialize the result.
+  #set ( $result = '' )
+
+  ## Start building the JSON.
+  #if( $root ) #set ( $result = "${result}{
+" ) #end
+
+  ## Find all pages.
+  #set( $pages = $_XPathTool.selectNodes($xml, 'system-page') )
+
+  ## Get the page type of each page.
+  #foreach ( $page in $pages )
+    #set ( $result = "${result}""$_XPathTool.selectSingleNode($page, 'path').value"": ""$_XPathTool.selectSingleNode($page, 'system-data-structure/@definition-path').value"",
+" )
+  #end
+
+  ## Find all folders.
+  #set( $folders = $_XPathTool.selectNodes($xml, 'system-folder') )
+
+  ## Get the page type of all pages within the given folder.
+  #foreach( $folder in $folders )
+    #set ( $result = "${result}#getPageTypes($folder, false)
+" )
+  #end
+
+  ## Finishing building the JSON.
+  #if( $root ) #set ( $result = "${result}
+}" ) #end
+
+  ## Return the result.
+  $result.trim().replaceAll('\n\s{2,}', '')
+
+#end

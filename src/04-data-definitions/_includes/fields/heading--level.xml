@@ -1,0 +1,15 @@
+---
+id: heading-level
+label: Heading Level
+message:
+---
+
+{{#use 'heading--level'}}
+<text default="Heading Level 2" identifier="{{id}}" label="{{label}}" type="dropdown">
+  <dropdown-item value="Heading Level 2"/>
+  <dropdown-item value="Heading Level 3"/>
+  <dropdown-item value="Heading Level 4"/>
+  <dropdown-item value="Heading Level 5"/>
+  <dropdown-item value="Heading Level 6"/>
+</text>
+{{/use}}

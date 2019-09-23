@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Metadata -->
+		{{> meta}}
+    <system-page-meta-keywords/>
+		<system-page-meta-description/>
+		<system-region name="01.01 Meta"/>
+
+		<!-- Feed Discovery -->
+		<system-region name="01.02 Feed Discovery"/>
+
+    <!-- Favicons -->
+    <system-region name="01.03 Favicons"/>
+
+		<!-- CSS -->
+		{{> css}}
+		<system-region name="02.01 CSS"/>
+
+		<!-- Analytics -->
+		{{> analytics}}
+		<system-region name="02.03 Analytics"/>
+
+		<title></title>
+
+	</head>
+	<body>
+
+    <!-- Content -->
+    <div id="eul-vue">
+      <system-region name="03.01 Header"/>
+		   <system-region name="03.02 DEFAULT"/>
+       <system-region name="03.03 Footer"/>
+    </div>
+
+    <!-- JavaScript -->
+		{{> js}}
+		<system-region name="02.02 JavaScript"/>
+
+	</body>
+</html>

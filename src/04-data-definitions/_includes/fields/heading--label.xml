@@ -1,0 +1,14 @@
+---
+id: heading-label
+label: Heading Label
+message:
+---
+
+{{#use 'heading--label'}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"
+      {{#if this.default}} default="{{this.default}}"{{/if}}
+      {{#if required}} required="true"{{/if}}
+      {{#if max}} maxlength="{{max}}"{{/if}}/>
+{{/use}}

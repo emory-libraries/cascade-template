@@ -1,0 +1,11 @@
+---
+id: caption
+label: Caption or Alt Text
+message: Add a brief caption or description of the image for for screen readers.
+---
+
+{{#use 'image--caption'}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"/>
+{{/use}}

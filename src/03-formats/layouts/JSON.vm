@@ -1,0 +1,15 @@
+## Get the XML.
+#set ( $xml = $_XPathTool.selectSingleNode($contentRoot, "/system-index-block/calling-page/system-page") )
+
+## Get any HTML within the XML.
+#set ( $html = $_XPathTool.selectSingleNode($xml, "system-data-structure/article/body/body-content") )
+
+## Serialize the HTML, then escape double quotes, single quotes, backslashes, and line breaks.
+#set ( $html.text = $_SerializerTool.serialize($html,true).replaceAll('"', '\"').replaceAll("'", "\'").replaceAll("\\", "\\\\").replaceAll("\r\n", "").trim() )
+
+{{> JSONStringify}}
+
+## Convert the XML to JSON.
+#set ( $json = "#JSONStringify($xml)" )
+
+<!--#protect-top $json.trim() #protect-top-->

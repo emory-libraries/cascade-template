@@ -1,0 +1,14 @@
+---
+id: link-list
+label: Links
+message:
+---
+
+{{#use 'link-list'}}
+<group identifier="{{id}}{{#if variation.id}}-{{variation.id}}{{/if}}"
+        label="{{#if variation.label}}{{variation.label}} {{/if}}{{label}}">
+  {{> heading--label}}
+  {{#if icon}}{{> icon}}{{/if}}
+  {{> link}}
+</group>
+{{/use}}

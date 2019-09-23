@@ -1,0 +1,11 @@
+---
+id: add-resource-links
+label: Add Resource Links?
+message: Would you like to add additional cards/links to the bottom of the page?
+---
+
+{{#set '_list' (fm 'data-definitions::_includes/fields/links/list.xml')}}{{/set}}
+
+<text help-text="{{message}}" identifier="{{id}}" label="{{label}}" type="checkbox">
+  <checkbox-item show-fields="{{_list.id}}{{#if variation.id}}-{{variation.id}}{{/if}}" value="Yes"/>
+</text>

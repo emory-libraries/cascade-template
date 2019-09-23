@@ -1,0 +1,19 @@
+---
+id: block-type
+label: Block Type
+message: Select the type of content to appear in this block.
+---
+
+{{#use 'block--type'}}
+<text help-text="{{message}}"
+  identifier="{{id}}{{#if variation.id}}-{{variation.id}}{{/if}}"
+  label="{{#if variation.label}}{{variation.label}} {{/if}}{{label}}"
+  type="radiobutton">
+  <radio-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{heading--label.id}},
+                           {{#if nesting}}{{nesting}}/{{/if}}{{heading--level.id}}"
+              value="Heading"/>
+  <radio-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{wysiwyg.id}}" value="Rich Text"/>
+  <radio-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{image.id}}" value="Image"/>
+  <radio-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{video.id}}" value="Video"/>
+</text>
+{{/use}}

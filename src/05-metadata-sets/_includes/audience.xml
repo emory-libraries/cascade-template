@@ -1,0 +1,10 @@
+<multiselect>
+  <item>Faculty</item>
+  <item>Researchers</item>
+  <item>Staff</item>
+  <item>Undergraduate Students</item>
+  <item>Graduate Students</item>
+  <item>Instructors</item>
+  <item>Non-Affiliates/Public Community</item>
+  <item>Hospital Affiliates</item>
+</multiselect>

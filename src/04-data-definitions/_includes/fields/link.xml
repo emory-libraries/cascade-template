@@ -1,0 +1,25 @@
+---
+id: link
+label: Link
+message:
+options:
+  page: true
+  file: true
+  external: true
+customizations:
+  label: true
+  description: true
+---
+
+{{#use 'link'}}
+<group identifier="link{{#if variation.id}}-{{variation.id}}{{/if}}"
+       label="{{#if variation.label}}{{variation.label}} {{/if}}Link"
+       {{!--#unless (eq multiple false)}}multiple="true"{{/unless--}}>
+  {{> version}}
+  {{> link--type}}
+  {{> link--page}}
+  {{> link--file}}
+  {{> link--external}}
+  {{> link--customizations}}
+</group>
+{{/use}}

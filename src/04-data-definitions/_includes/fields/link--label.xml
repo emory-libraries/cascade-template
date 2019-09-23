@@ -1,0 +1,14 @@
+---
+id: link-label
+label: Link Label
+message: Enter a custom label for this link.
+---
+
+{{#use 'link--label'}}
+{{#unless (eq customizations.label false)}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"
+      required="true"/>
+{{/unless}}
+{{/use}}

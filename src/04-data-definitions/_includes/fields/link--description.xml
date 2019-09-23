@@ -1,0 +1,14 @@
+---
+id: link-description
+label: Link Description
+message: Enter a custom description to accompany the link.
+---
+
+{{#use 'link--description'}}
+{{#unless (eq customizations.description false)}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"
+      multi-line="true"/>
+{{/unless}}
+{{/use}}

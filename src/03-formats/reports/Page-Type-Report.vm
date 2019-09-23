@@ -1,0 +1,9 @@
+## Get the XML.
+#set ( $xml = $_XPathTool.selectSingleNode($contentRoot, "/system-index-block") )
+
+{{> getPageTypes}}
+
+## Extract all page types from the index.
+#set ( $index = "#getPageTypes($xml)" )
+
+<!--#protect-top $index.trim() #protect-top-->

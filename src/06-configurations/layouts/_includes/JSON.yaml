@@ -1,0 +1,16 @@
+# Configurations for a JSON output.
+JSON:
+  Default Output: {{default this.default false}}
+  Type of Data: JSON
+  File Extension: json
+  Template: {{template}}
+  XSLT Format: {{default format null}}
+  Publishable: {{default publishable false}}
+  Include XML Declaration in Published Files: {{default xml false}}
+  Regions:
+    {{#each regions}}
+    {{@key}}:
+      block: {{default block false}}
+      format: {{default format false}}
+      inline: {{default inline false}}
+    {{/each}}

@@ -1,0 +1,11 @@
+---
+id: photo-credit
+label: Photo Credit
+message: Be kind and credit the photographer or source if possible.
+---
+
+{{#use 'image--credit'}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"/>
+{{/use}}

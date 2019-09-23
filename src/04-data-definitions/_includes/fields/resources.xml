@@ -1,0 +1,20 @@
+---
+id:
+label:
+message:
+---
+
+{{#embed 'data-definitions::_includes/fields/sections/resources/_optional.xml'
+  variation=(object id='resources')}}{{/embed}}
+{{#embed 'data-definitions::_includes/fields/links/list.xml'
+  variation=(object id='resource' label='Resource')}}
+  settings=(object
+    heading=(object
+      default='Library Resources and Assisistance'
+      required=true
+    )
+    link=(
+      variation=(object id='resource' label='Resource')
+      depth=2
+    )
+  )}}{{/embed}}

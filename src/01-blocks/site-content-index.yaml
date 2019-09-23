@@ -1,0 +1,48 @@
+Index Type:
+  - (x) Folder Index
+  - ( ) Content Type Index
+Max Rendered Assets: 0
+Indexed Asset Content:
+  - [x] Append Calling Page Data
+  - [x] Regular Content
+  - [x] System Metadata
+  - [x] User Metadata
+  - [ ] Tags
+  - [ ] Folder Access Rights
+  - [ ] User Information
+  - [ ] Worflow Information
+
+# The following fields only apply if "Folder Index" is checked for "Index Type".
+Index Folder: Emory Libraries - Main
+Rendering Behavior:
+  - [x] Render normally, starting at the indexed folder
+  - [ ] Start at the current page and include its folder hierarchy
+  - [ ] Start at the current page with folder hierarchy, and also include siblings
+  - [ ] Start at the current page with folder hierarchy, siblings, and also render forward
+Depth of Index: 5
+Indexed Asset Types:
+  - [x] Pages
+  - [ ] Blocks
+  - [x] Links
+  - [ ] Files
+
+# This only applies if "Pages" is checked in "Indexed Asset Types" or "Index Type" is set to "Content Type Index".
+Page XML:
+  - ( ) Do not render page XML inline
+  - (x) Render page XML inline
+  - ( ) Render page XML inline only for current page
+
+# This only applies if "Blocks" is checked in "Indexed Asset Types".
+# Block XML:
+#   - ( ) Do not render block XML inline
+#   - ( ) Render XHTML/Data Definition block, XML block, and Text block XML inline
+
+Sort Method:
+  - ( ) Alphabetical
+  - ( ) Last Modified Date
+  - ( ) Creation Date
+  # The following option only applies if "Index Type" is set to "Folder Index".
+  - (x) Folder Order
+Sort Order:
+  - (x) Ascending
+  - ( ) Descending

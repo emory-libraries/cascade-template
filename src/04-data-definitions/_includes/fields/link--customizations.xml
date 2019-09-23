@@ -1,0 +1,25 @@
+---
+id: link-customizations
+label: Link Customizations
+message: Enter a custom link label or description. By default, the site will use the metadata from the linked asset.
+---
+
+{{#use 'link--customizations'}}
+{{#unless (and (eq customizations.label false) (eq customizations.description false))}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"
+      type="checkbox">
+  {{#unless (eq customizations.label false)}}
+  <checkbox-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{link--label.id}}"
+                 value="{{link--label.label}}"/>
+  {{/unless}}
+  {{#unless (eq customizations.description false)}}
+  <checkbox-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{link--description.id}}"
+                 value="{{link--description.id}}"/>
+  {{/unless}}
+</text>
+{{> link--label}}
+{{> link--description}}
+{{/unless}}
+{{/use}}

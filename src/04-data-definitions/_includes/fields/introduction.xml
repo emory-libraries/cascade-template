@@ -1,0 +1,12 @@
+---
+id: introduction
+label: Introductory Paragraph
+message: This is a plain text introduction to the content. The template design will apply styles to this paragraph automatically.
+---
+
+{{#use 'introduction'}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"
+      multi-line="true"/>
+{{/use}}

@@ -1,0 +1,14 @@
+---
+id: add-contact
+label: Add Contacts?
+message: Would you like to add contacts to the bottom of the page?
+---
+
+{{#use 'contacts--optional'}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"
+      type="checkbox">
+  <checkbox-item show-fields="{{link-list.id}}{{#if variation.id}}-{{variation.id}}{{/if}}" value="Yes"/>
+</text>
+{{/use}}

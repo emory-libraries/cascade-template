@@ -1,0 +1,16 @@
+---
+id: cascade-page
+label: Cascade Page
+message: Select a page in Cascade.
+---
+
+{{#use 'link--page'}}
+{{#unless (eq options.page false)}}
+<asset help-text="{{message}}" 
+       identifier="{{id}}"
+       label="{{label}}"
+       required="true"
+       type="page"
+       {{#if depth}} render-content-depth="{{depth}}"{{/if}}/>
+{{/unless}}
+{{/use}}

@@ -1,0 +1,11 @@
+---
+id: icon
+label: Icon ID
+message: Browse or search for an icon id at http://template.library.emory.edu/styleguide/patternlibrary/current/patterns/00-meta-20-assets-icons/00-meta-20-assets-icons.html. An example of an icon ID is 'material-help_outline'.
+---
+
+{{#use 'icon'}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"/>
+{{/use}}

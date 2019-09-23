@@ -1,0 +1,12 @@
+---
+id: wysiwyg
+label: Rich text
+message:
+---
+
+{{#use 'wysiwyg'}}
+<text configuration="Emory Libraries"
+      identifier="{{id}}"
+      label="{{label}}"
+      wysiwyg="true"/>
+{{/use}}

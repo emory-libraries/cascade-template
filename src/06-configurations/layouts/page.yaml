@@ -1,0 +1,36 @@
+---
+regions:
+  01.01 Meta:
+    block: null
+    format: null
+  01.02 Feed Discovery:
+    block: null
+    format: null
+  01.03 Favicons:
+    block: null
+    format: null
+  02.01 CSS:
+    block: null
+    format: null
+  02.02 JS:
+    block: null
+    format: null
+  02.03 Analytics:
+    block: null
+    format: null
+  03.01 Header:
+    block: null
+    format: null
+  03.02 DEFAULT:
+    block: null
+    format: null
+  03.03 Footer:
+    block: null
+    format: null
+---
+
+{{> HTML template=(default template.home template)}}
+
+{{> JSON template=(default template.json 'JSON')}}
+
+{{> XML template=(default template.xml 'XML')}}

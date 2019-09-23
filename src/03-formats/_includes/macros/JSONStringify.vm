@@ -1,0 +1,37 @@
+## Create a macro for recursively converting the XML to JSON.
+#macro ( JSONStringify $xml $root )
+
+    ## Use the root by default.
+    #if ( $root != true and $root != false ) #set ( $root = true ) #end
+
+    ## Initialize the result.
+    #set ( $result = '' )
+
+    ## Build the JSON.
+    #if ( $root ) #set ( $result = "${result}{"  ) #end
+    #set( $result = "${result}""${xml.name}"": {" )
+    #if ( $xml.children.size() > 0 )
+        #foreach ( $node in $xml.children )
+          #if ( $node.children.size() > 0 )
+            #set ( $result = "${result}#JSONStringify($node, false)" )
+            #if( $foreach.hasNext ) #set ( $result = "${result}, " ) #end
+          #else
+            #set ( $result = "${result}""${node.name}"": ""${node.text}""" )
+            #if( $foreach.hasNext ) #set ( $result = "${result}, " ) #end
+          #end
+        #end
+        #if( $xml.attributes.size() > 0 ) #set( $result = "${result}, " ) #end
+    #end
+    #if( $xml.attributes.size() > 0 )
+        #foreach ( $attr in $xml.attributes )
+            #set ( $result = "${result}""@${attr.name}"": ""${attr.value}""" )
+            #if( $foreach.hasNext ) #set( $result = "${result}, " ) #end
+        #end
+    #end
+    #set ( $result = "${result}}" )
+    #if ( $root ) #set ( $result = " ${result}}" ) #end
+
+    ## Return the result.
+    $result.replaceAll("\r", "").replaceAll("\n", "").replaceAll("\s+", " ").replaceAll(" , ", ", ").trim()
+
+#end

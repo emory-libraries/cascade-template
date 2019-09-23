@@ -1,0 +1,10 @@
+---
+id: video-url
+label: Video URL
+message:
+---
+
+{{#use 'video'}}
+<text identifier="{{id}}"
+      label="{{label}}"/>
+{{/use}}

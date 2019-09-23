@@ -1,0 +1,15 @@
+---
+id: content-block
+label: Content Block
+message:
+---
+
+{{#use 'block'}}
+<group identifier="{{id}}" label="{{label}}" multiple="true">
+  {{> block--type}}
+  {{> heading}}
+  {{> wysiwyg}}
+  {{> image}}
+  {{> video}}
+</group>
+{{/use}}

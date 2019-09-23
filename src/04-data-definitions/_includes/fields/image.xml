@@ -1,0 +1,15 @@
+---
+id: Image
+label: Image
+message:
+---
+
+{{#use 'image'}}
+<group identifier="{{id}}{{#if variation.id}}-{{variation.id}}{{/if}}"
+       label="{{#if variation.label}}{{variation.label}} {{/if}}{{label}}">
+  {{> version}}
+  {{> image--file}}
+  {{> image--caption}}
+  {{> image--credit}}
+</group>
+{{/use}}

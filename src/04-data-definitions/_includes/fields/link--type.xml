@@ -1,0 +1,33 @@
+---
+id: link-type
+label: Link Type
+message:
+---
+
+{{#use 'link--type' with='options'}}
+<text identifier="{{id}}"
+      label="{{label}}"
+      help-text="{{message}}"
+      required="true"
+      type="radiobutton">
+  {{#unless (eq options.page false)}}
+  <radio-item show-fields="
+    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--page.id}},
+    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--customizations.id}}"
+    value="{{link--page.label}}"/>
+  {{/unless}}
+  {{#unless (eq options.file false)}}
+  <radio-item show-fields="
+    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--file.id}},
+    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--customizations.id}}"
+    value="{{link--file.label}}"/>
+  {{/unless}}
+  {{#unless (eq options.external false)}}
+  <radio-item show-fields="
+    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--external.id}},
+    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--label.id}},
+    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--description.id}}"
+    value="{{link--external.label}}"/>
+  {{/unless}}
+</text>
+{{/use}}

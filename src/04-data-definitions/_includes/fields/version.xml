@@ -1,0 +1,15 @@
+---
+id: version
+label: Version
+message: Use semver.org standards for version numbers.
+---
+
+{{#use 'version'}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"
+      default="{{default v '1.0.0'}}"
+      input-data-format="xx.xx.xx"
+      regular-expression="^(\d+\.)?(\d+\.)?(\*|\d+)$"
+      restrict-to-groups="Library - Web Devs"/>
+{{/use}}

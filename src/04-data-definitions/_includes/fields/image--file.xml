@@ -1,0 +1,12 @@
+---
+id: image-file
+label: Image File
+message: Select an image file from within Cascade.
+---
+
+{{#use 'image--file'}}
+<asset help-text="{{message}}"
+       identifier="{{id}}"
+       label="{{label}}"
+       type="file"/>
+{{/use}}
