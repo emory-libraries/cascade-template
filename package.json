@@ -1,6 +1,6 @@
 {
   "name": "cascade-template",
-  "version": "1.0.0-dev",
+  "version": "1.0.0-alpha.1",
   "description": "Cascade assets for the Emory Libraries website",
   "main": "index.js",
   "scripts": {
