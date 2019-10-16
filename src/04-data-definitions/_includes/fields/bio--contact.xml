@@ -3,24 +3,28 @@ id: contact-info
 label: Contact Information
 fields:
   - include: email
+    required: true
   - include: phone
+    required: true
   - include: fax
   - id: libcal
     label: LibCal URL
     message: Provide the full LibCal URL for this person, if applicable.
+    required: true
   - include: address
     variant: mailing
 ---
 
 {{#use 'bio--contact'}}
-<group id="{{id}}" label="{{label}}">
+<group identifier="{{id}}" label="{{label}}">
   {{#each fields}}
     {{#if include}}
-      {{> (valueOf include)}}
+      {{> (valueOf include) (merge (object) ../this this)}}
     {{else}}
       <text identifier="{{id}}"
             label="{{label}}"
-            help-text="{{message}}"/>
+            help-text="{{message}}"
+            {{#if required}}required="true"{{/if}}/>
     {{/if}}
   {{/each}}
 </group>

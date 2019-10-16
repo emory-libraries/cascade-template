@@ -18,7 +18,7 @@ variants:
     label: Panel
 ---
 
-{{#use 'link' with=(array 'options' 'customizations' 'variation' 'multiple' 'max' 'min' 'nesting' 'force')}}
+{{#use 'link' with=(array 'options' 'customizations' 'variation' 'multiple' 'max' 'min' 'nesting' 'force' 'required')}}
 {{#if variant}}
   {{#set 'id' (get 'id' (get variant variants))}}{{/set}}
   {{#set 'label' (get 'label' (get variant variants))}}{{/set}}

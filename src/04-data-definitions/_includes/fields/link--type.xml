@@ -4,12 +4,20 @@ label: Link Type
 message:
 ---
 
-{{#use 'link--type' with=(array 'options' 'nesting')}}
+{{#use 'link--type' with=(array 'options' 'nesting' 'required')}}
+{{#if (gte (length (filter (values options) true)) 2)}}
 <text identifier="{{id}}"
       label="{{label}}"
       help-text="{{message}}"
+      {{#if required}}
       required="true"
+      {{else}}
+      default="None"
+      {{/if}}
       type="radiobutton">
+  {{#unless required}}
+  <radio-item value="None"/>
+  {{/unless}}
   {{#unless (eq options.page false)}}
   <radio-item show-fields="
     {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--page.id}},
@@ -30,4 +38,5 @@ message:
     value="{{link--url.label}}"/>
   {{/unless}}
 </text>
+{{/if}}
 {{/use}}

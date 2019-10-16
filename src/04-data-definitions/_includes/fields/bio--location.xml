@@ -2,6 +2,7 @@
 id: location
 label: Location
 message: Select the location where this person works.
+required: true
 values:
   - Business
   - Center for Digital Scholarship
@@ -21,7 +22,8 @@ values:
 <text help-text="{{message}}"
       identifier="{{id}}"
       label="{{label}}"
-      type="checkbox">
+      type="checkbox"
+      {{#if required}}required="true"{{/if}}>
   {{#each values}}
   <checkbox-item value="{{.}}"/>
   {{/each}}

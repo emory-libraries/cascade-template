@@ -1,7 +1,7 @@
 ---
 id: caption
 label: Caption or Alt Text
-message: Add a brief caption or description of the image for for screen readers.
+message: Add a brief caption or description of the image for screen readers.
 ---
 
 {{#use 'image--caption'}}

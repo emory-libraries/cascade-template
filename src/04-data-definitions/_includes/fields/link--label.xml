@@ -5,10 +5,10 @@ message: Enter a custom label for this link.
 ---
 
 {{#use 'link--label' with=(array 'customizations' 'force')}}
-{{#unless (or (eq customizations.label false) (includes 'label' force))}}
+{{#if (or (neq customizations.label false) (includes 'label' force))}}
 <text help-text="{{message}}"
       identifier="{{id}}"
       label="{{label}}"
       required="true"/>
-{{/unless}}
+{{/if}}
 {{/use}}

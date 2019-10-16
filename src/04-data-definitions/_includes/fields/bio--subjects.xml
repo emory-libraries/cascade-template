@@ -7,6 +7,7 @@ label: Subject Areas
 <group identifier="{{id}}" label="{{label}}">
   <text identifier="expertise"
         label="Area of Expertise"
+        help-text="Enter the subject areas that this librarian specializes in. Insert one subject area per textbox."
         multiple="true"/>
 </group>
 {{/use}}

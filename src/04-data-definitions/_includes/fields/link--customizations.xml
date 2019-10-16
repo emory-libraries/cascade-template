@@ -1,7 +1,7 @@
 ---
 id: link-customizations
 label: Link Customizations
-message: Enter a custom link label or description. By default, the site will use the metadata from the linked asset.
+message: Indicate whether you would like to enter a custom link label and/or description. By default, the site will use the metadata from the linked asset.
 ---
 
 {{#use 'link--customizations' with=(array 'customizations' 'nesting' 'force')}}
@@ -19,7 +19,7 @@ message: Enter a custom link label or description. By default, the site will use
                  value="{{link--description.id}}"/>
   {{/unless}}
 </text>
+{{/unless}}
 {{> link--label}}
 {{> link--description}}
-{{/unless}}
 {{/use}}

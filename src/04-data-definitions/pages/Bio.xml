@@ -3,16 +3,19 @@
 	{{> bio--name}}
 	{{> bio--job}}
 	{{> bio--location}}
+	{{> bio--librarian}}
 	{{> image variation=(object label='Profile')}}
 	{{> introduction variant='quote'}}
 	{{> wysiwyg variant='biography'}}
-	{{> bio--education }}
+	{{> bio--education}}
 	{{> bio--contact}}
 	{{> bio--subjects}}
 	{{> link variation=(object id='research-guides' label='Research Guides')
 					 options=(object page=false file=false url=true)
-					 customizations=(object label=false description=false)}}
+					 customizations=(object label=false description=false)
+					 required=true}}
 	{{> link variation=(object id='cv' label='Curriculum Vitae (CV)')
  					 options=(object page=false file=true url=false)
- 					 customizations=(object label=false description=false)}}
+ 					 customizations=(object label=false description=false)
+					 required=false}}
 </system-data-structure>

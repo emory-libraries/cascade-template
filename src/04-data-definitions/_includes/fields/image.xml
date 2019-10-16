@@ -1,10 +1,10 @@
 ---
-id: Image
+id: image
 label: Image
 message:
 ---
 
-{{#use 'image'}}
+{{#use 'image' with='variation'}}
 <group identifier="{{id}}{{#if variation.id}}-{{variation.id}}{{/if}}"
        label="{{#if variation.label}}{{variation.label}} {{/if}}{{label}}">
   {{> version}}

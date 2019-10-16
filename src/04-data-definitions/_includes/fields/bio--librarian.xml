@@ -1,0 +1,19 @@
+---
+id: subject-librarian
+label: Subject Librarian?
+message: Check this box if the person is a Subject Librarian.
+---
+
+{{#use 'bio--librarian' with='nesting'}}
+<text identifier="{{id}}"
+      label="{{label}}"
+      help-text="{{message}}"
+      type="checkbox">
+  <checkbox-item value="Yes"
+                show-fields="
+                  {{#if nesting}}{{nesting}}/{{/if}}{{bio--contact.id}}/libcal,
+                  {{#if nesting}}{{nesting}}/{{/if}}{{bio--subjects.id}},
+                  {{#if nesting}}{{nesting}}/{{/if}}{{concat link.id '-research-guides'}}
+                "/>
+</text>
+{{/use}}

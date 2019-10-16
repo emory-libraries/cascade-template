@@ -5,10 +5,10 @@ message: Enter a custom description to accompany the link.
 ---
 
 {{#use 'link--description' with=(array 'customizations' 'force')}}
-{{#unless (or (eq customizations.description false) (includes 'description' force))}}
+{{#if (or (neq customizations.description false) (includes 'description' force))}}
 <text help-text="{{message}}"
       identifier="{{id}}"
       label="{{label}}"
       multi-line="true"/>
-{{/unless}}
+{{/if}}
 {{/use}}

@@ -10,6 +10,7 @@ message: Select a file in Cascade.
        identifier="{{id}}"
        label="{{label}}"
        required="true"
-       type="file"/>
+       type="file"
+       required="true"/>
 {{/unless}}
 {{/use}}

@@ -4,10 +4,11 @@ label: Phone Number
 message: Enter a valid 10-digit US phone number, excluding any country codes.
 ---
 
-{{#use 'phone' with='override'}}
+{{#use 'phone' with=(array 'override' 'required')}}
 <text identifier="{{#if override.id}}{{override.id}}{{else}}{{id}}{{/if}}"
       label="{{#if override.label}}{{override.label}}{{else}}{{label}}{{/if}}"
-      message="{{#if override.message}}{{override.message}}{{else}}{{message}}{{/if}}"
+      help-text="{{#if override.message}}{{override.message}}{{else}}{{message}}{{/if}}"
       format="555-555-5555"
-      regular-expression="^(\d{3})-(\d{3})-(\d{4})$"/>
+      regular-expression="^(\d{3})-(\d{3})-(\d{4})$"
+      {{#if required}}required="true"{{/if}}/>
 {{/use}}

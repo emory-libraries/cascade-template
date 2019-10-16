@@ -5,6 +5,7 @@ const _ = require('lodash');
 module.exports = {
 
   eq: (a, b, options) => options.fn ? (a === b ? options.fn() : options.inverse()) : a === b,
+  neq: (a, b, options) => options.fn ? (a !== b ? options.fn() : options.inverse()) : a !== b,
   gte: (a, b, options) => options.fn ? (a >= b ? options.fn() : options.inverse()) : a >= b,
   gt: (a, b, options) => options.fn ? (a > b ? options.fn() : options.inverse()) : a > b,
   lte: (a, b, options) => options.fn ? (a <= b ? options.fn() : options.inverse()) : a <= b,
@@ -15,7 +16,7 @@ module.exports = {
     const options = _.last(expressions);
 
     // Evaluate expressions for truthiness.
-    const truthy = _.every(expressions, true);
+    const truthy = _.every(_.initial(expressions), (expr) => expr === true);
 
     // Return truthy or falsey based on result.
     return options.fn ? truthy ? options.fn() : options.inverse() : truthy;
@@ -27,7 +28,7 @@ module.exports = {
     const options = _.last(expressions);
 
     // Evaluate expressions for truthiness.
-    const truthy = _.some(expressions, true);
+    const truthy = _.some(_.initial(expressions), (expr) => expr === true);
 
     // Return truthy or falsey based on result.
     return options.fn ? truthy ? options.fn() : options.inverse() : truthy;

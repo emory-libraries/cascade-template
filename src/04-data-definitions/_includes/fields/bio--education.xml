@@ -4,7 +4,7 @@ label: Education
 fields:
   - id: degree
     label: Degree
-    message: Provide the full name of the academic degree this person has earned. Please, avoid the use of punctuations (e.g., 'BA', 'MA', 'MBA', 'JD', 'PhD', 'EdD', 'EdS', etc.).
+    message: Provide the full name of the academic degree this person has earned. Avoid using punctuations (e.g., 'BA', 'MA', 'MBA', 'JD', 'PhD', 'EdD', 'EdS', etc.).
   - id: major
     label: Major
     message: Enter any majors(s) that apply to this degree.

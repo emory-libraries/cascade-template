@@ -4,10 +4,11 @@ label: Email Address
 message: Enter a valid email address.
 ---
 
-{{#use 'email' with='override'}}
+{{#use 'email' with=(array 'override' 'required')}}
 <text identifier="{{#if override.id}}{{override.id}}{{else}}{{id}}{{/if}}"
       label="{{#if override.label}}{{override.label}}{{else}}{{label}}{{/if}}"
       help-text="{{#if override.message}}{{override.message}}{{else}}{{message}}{{/if}}"
       format="jane.doe@emory.edu"
-      regular-expression="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"/>
+      regular-expression="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+      {{#if required}}required="true"{{/if}}/>
 {{/use}}

@@ -17,6 +17,7 @@ variants:
        label="{{#if variant}}{{get 'label' (get variant variants)}}{{else}}{{label}}{{/if}}"
        {{#unless (eq required false)}}required="true"{{/unless}}
        type="page"
-       {{#if depth}}render-content-depth="{{depth}}"{{/if}}/>
+       {{#if depth}}render-content-depth="{{depth}}"{{/if}}
+       required="true"/>
 {{/unless}}
 {{/use}}
