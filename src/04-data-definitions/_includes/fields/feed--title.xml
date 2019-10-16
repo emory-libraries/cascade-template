@@ -1,0 +1,9 @@
+---
+id: title
+label: Feed Title
+message: Enter a title to help better identify the feed.
+---
+
+{{#use 'feed--title'}}
+<text help-text="{{message}}" identifier="{{id}}" label="{{label}}"/>
+{{/use}}

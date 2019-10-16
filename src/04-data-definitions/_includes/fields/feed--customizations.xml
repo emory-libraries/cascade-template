@@ -1,0 +1,13 @@
+---
+id: customizations
+label: Feed Customizations
+---
+
+{{#use 'feed--customizations' with='nesting'}}
+  <text identifier="{{id}}" label="{{label}}" type="checkbox">
+    <checkbox-item label="{{button--label.label}}" show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{button--label.id}}" value="{{button--label.label}}"/>
+    <checkbox-item label="{{icon.label}}" show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{icon.id}}" value="{{icon.label}}"/>
+  </text>
+  {{> button--label}}
+  {{> icon}}
+{{/use}}

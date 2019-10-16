@@ -1,0 +1,14 @@
+---
+id: toc
+label: Include Table of Contents?
+message: Check the box to automagically have a Table of Contents inserted at the top of this page.
+---
+
+{{#use 'toc'}}
+<text help-text="{{message}}"
+      id="{{id}}"
+      label="{{label}}"
+      type="checkbox">
+  <checkbox-item value="Yes"/>
+</text>
+{{/use}}

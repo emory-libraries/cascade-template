@@ -2,15 +2,21 @@
 id: cascade-page
 label: Cascade Page
 message: Select a page in Cascade.
+
+variants:
+  displayed-hours:
+    id: displayed-hours
+    label: Displayed Hours
+    message: Select the location's hours that you wish to display. The regular hours for appropriate weekday will be shown.
 ---
 
-{{#use 'link--page'}}
+{{#use 'link--page' with=(array 'options' 'variant')}}
 {{#unless (eq options.page false)}}
-<asset help-text="{{message}}" 
-       identifier="{{id}}"
-       label="{{label}}"
-       required="true"
+<asset help-text="{{#if variant}}{{get 'message' (get variant variants)}}{{else}}{{message}}{{/if}}"
+       identifier="{{#if variant}}{{get 'id' (get variant variants)}}{{else}}{{id}}{{/if}}"
+       label="{{#if variant}}{{get 'label' (get variant variants)}}{{else}}{{label}}{{/if}}"
+       {{#unless (eq required false)}}required="true"{{/unless}}
        type="page"
-       {{#if depth}} render-content-depth="{{depth}}"{{/if}}/>
+       {{#if depth}}render-content-depth="{{depth}}"{{/if}}/>
 {{/unless}}
 {{/use}}

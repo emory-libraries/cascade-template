@@ -1,0 +1,26 @@
+---
+id: tile
+label: Tile
+---
+
+{{#use 'tile' with=(array 'multiple' 'min' 'max' 'nesting' 'include')}}
+<group identifier="{{id}}"
+       label="{{label}}"
+       {{#if (eq multiple true)}}
+       multiple="true"
+       {{#if max}}maximum-number="{{max}}"{{/if}}
+       {{#if min}}minimum-number="{{min}}"{{/if}}
+       {{/if}}>
+    {{#if (includes 'badge' include)}}{{> badge--label}}{{/if}}
+    {{> heading--label variant='context'}}
+    {{#> link options=(object page=true file=true url=true)
+              customizations=(object label=true description=true)
+              multiple=false
+              nesting=(breadcrumb id)}}
+      {{#*inline 'link-slot'}}
+        {{> button--label}}
+      {{/inline}}
+    {{/link}}
+    {{> image}}
+</group>
+{{/use}}

@@ -1,34 +1,20 @@
 ---
-id:
-label:
-message:
 
-config:
-  contacts--optional:
-    variation:
-      id: contact
-  link-list:
-    variation:
-      id: contact
-      label: Contact
-  heading--label:
-    default: Who to Contact
-    required: true
-  link:
-    variation:
-      id: contact
-      label: Contact
-    depth: 2
-    options:
-      page: true
-      file: false
-      external: false
-    customizations:
-      label: false
-      description: false
 ---
 
 {{#use 'contacts'}}
-{{> contacts--optional (merge this config)}}
-{{> link-list (merge this config)}}
+{{#set 'nesting' (breadcrumb id)}}{{/set}}
+{{> contacts--optional variation=(object id='contact')}}
+{{> link-list config=(object
+                heading--label=(object
+                  default='Who to Contact'
+                  required=true
+                )
+                link=(object
+                  variation=(object id='contact' label='Contact')
+                  options=(object page=true file=false url=false)
+                  customizations=(object label=false description=false)
+                  depth=2
+                )
+              )}}
 {{/use}}

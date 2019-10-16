@@ -1,0 +1,15 @@
+---
+id: sidebar
+label: Sidebar
+---
+
+{{#use 'sidebar-info' with='nesting'}}
+{{#set 'nesting' (breadcrumb id)}}{{/set}}
+{{> sidebar--optional for='sidebar-info'}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> version}}
+  {{> explorer}}
+  {{> card-action--optional}}
+  {{> card-action}}
+</group>
+{{/use}}

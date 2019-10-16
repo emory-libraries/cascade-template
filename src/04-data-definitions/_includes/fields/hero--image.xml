@@ -1,0 +1,12 @@
+---
+id: hero-image
+label: Hero Image
+message: Select a background image for the page's hero section.
+---
+
+{{#use 'hero--image'}}
+<asset help-text="{{message}}"
+       identifier="{{id}}"
+       label="{{label}}"
+       type="file"/>
+{{/use}}

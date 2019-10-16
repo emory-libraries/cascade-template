@@ -1,25 +1,43 @@
 ---
 id: link
 label: Link
-message:
 options:
   page: true
   file: true
-  external: true
+  url: true
 customizations:
   label: true
   description: true
+
+variants:
+  button:
+    id: button
+    label: Button
+  panel:
+    id: panels
+    label: Panel
 ---
 
-{{#use 'link'}}
-<group identifier="link{{#if variation.id}}-{{variation.id}}{{/if}}"
-       label="{{#if variation.label}}{{variation.label}} {{/if}}Link"
-       {{!--#unless (eq multiple false)}}multiple="true"{{/unless--}}>
+{{#use 'link' with=(array 'options' 'customizations' 'variation' 'multiple' 'max' 'min' 'nesting' 'force')}}
+{{#if variant}}
+  {{#set 'id' (get 'id' (get variant variants))}}{{/set}}
+  {{#set 'label' (get 'label' (get variant variants))}}{{/set}}
+{{else}}
+  {{#if variation.id}}{{#set 'id' (concat id '-' variation.id)}}{{/set}}{{/if}}
+  {{#if variation.label}}{{#set 'label' (concat variation.label ' ' label)}}{{/set}}{{/if}}
+{{/if}}
+<group identifier="{{id}}" label="{{label}}"
+       {{#if (eq multiple true)}}
+       multiple="true"
+       {{#if max}}maximum-number="{{max}}"{{/if}}
+       {{#if min}}minimum-number="{{min}}"{{/if}}
+       {{/if}}>
   {{> version}}
-  {{> link--type}}
+  {{> link--type nesting=(breadcrumb id)}}
   {{> link--page}}
   {{> link--file}}
-  {{> link--external}}
-  {{> link--customizations}}
+  {{> link--url}}
+  {{> link--customizations nesting=(breadcrumb id)}}
+  {{#> link-slot}}{{/link-slot}}
 </group>
 {{/use}}

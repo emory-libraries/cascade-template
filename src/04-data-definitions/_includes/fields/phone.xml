@@ -1,0 +1,13 @@
+---
+id: phone
+label: Phone Number
+message: Enter a valid 10-digit US phone number, excluding any country codes.
+---
+
+{{#use 'phone' with='override'}}
+<text identifier="{{#if override.id}}{{override.id}}{{else}}{{id}}{{/if}}"
+      label="{{#if override.label}}{{override.label}}{{else}}{{label}}{{/if}}"
+      message="{{#if override.message}}{{override.message}}{{else}}{{message}}{{/if}}"
+      format="555-555-5555"
+      regular-expression="^(\d{3})-(\d{3})-(\d{4})$"/>
+{{/use}}

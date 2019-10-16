@@ -1,0 +1,9 @@
+<system-data-structure>
+	{{> version}}
+	{{> hero include='badge'}}
+	{{> popular}}
+	{{> slider}}
+	{{> major-research-help}}
+	{{> major-using-the-library}}
+	{{> major-feed-preview include='listing'}}
+</system-data-structure>

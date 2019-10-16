@@ -1,0 +1,23 @@
+---
+id: card
+label: Action Card
+---
+
+{{#use 'card-action' with=(array 'nesting' 'multiple' 'min' 'max')}}
+<group id="{{id}}"
+       label="{{label}}"
+       {{#if multiple}}
+       multiple="true"
+       {{#if min}}minimum-number="{{min}}"{{/if}}
+       {{#if max}}maximum-number="{{max}}"{{/if}}
+       {{/if}}>
+  {{#> link options=(object page=true file=true url=true)
+            customizations=(object label=true description=false)
+            multiple=false}}
+    {{#*inline 'link-slot'}}
+      {{> button--label}}
+    {{/inline}}
+  {{/link}}
+  {{> image}}
+</group>
+{{/use}}

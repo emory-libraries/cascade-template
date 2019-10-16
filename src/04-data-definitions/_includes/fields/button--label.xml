@@ -1,0 +1,12 @@
+---
+id: button-Label
+label: Button Label
+message:
+---
+
+{{#use 'button--label' with='default'}}
+<text identifier="{{id}}"
+      label="{{label}}"
+      help-text="{{message}}"
+      {{#if this.default}}default="{{this.default}}"{{/if}}/>
+{{/use}}

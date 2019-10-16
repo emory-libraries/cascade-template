@@ -2,13 +2,24 @@
 id: heading-label
 label: Heading Label
 message:
+
+variants:
+  context:
+    id: context
+    label: Context or Date
+    message: Use this field to insert a short contextualized heading or formatted date string.
+  deep-dive:
+    id: section-title
+    label: Heading Label
+    message: Enter a custom heading for this deep dive section.
+    default: Dive Deeper
 ---
 
-{{#use 'heading--label'}}
-<text help-text="{{message}}"
-      identifier="{{id}}"
-      label="{{label}}"
-      {{#if this.default}} default="{{this.default}}"{{/if}}
-      {{#if required}} required="true"{{/if}}
-      {{#if max}} maxlength="{{max}}"{{/if}}/>
+{{#use 'heading--label' with=(array 'max' 'required' 'default' 'variant')}}
+<text help-text="{{#if variant}}{{get 'message' (get variant variants)}}{{else}}{{message}}{{/if}}"
+      identifier="{{#if variant}}{{get 'id' (get variant variants)}}{{else}}{{id}}{{/if}}"
+      label="{{#if variant}}{{get 'label' (get variant variants)}}{{else}}{{label}}{{/if}}"
+      {{#if this.default}}default="{{this.default}}"{{/if}}
+      {{#if required}}required="true"{{/if}}
+      {{#if max}}maxlength="{{max}}"{{/if}}/>
 {{/use}}

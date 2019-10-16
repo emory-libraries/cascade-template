@@ -1,0 +1,17 @@
+---
+id: links-list
+label: Explorer
+---
+
+{{#use 'explorer' with='nesting'}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> version}}
+  {{> heading--label max=15}}
+  {{> link multiple=true
+           min=3
+           max=8
+           options=(object page=true file=true url=true)
+           customizations=(object label=true description=true)
+           nesting=(breadcrumb id)}}
+</group>
+{{/use}}

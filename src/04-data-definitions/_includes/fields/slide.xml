@@ -1,0 +1,24 @@
+---
+id: slide
+label: Slide
+---
+
+{{#use 'slide' with=(array 'multiple' 'min' 'max' 'nesting')}}
+<group identifier="{{id}}"
+       label="{{label}}"
+       {{#unless (eq multiple false)}}
+       multiple="true"
+       {{#if min}}minimum-number="{{min}}"{{/if}}
+       {{#if max}}maximum-number="{{max}}"{{/if}}
+       {{/unless}}>
+  {{> heading--label variant='context' default='Featured'}}
+  {{#> link options=(object page=true file=false url=true)
+            customizations=(object label=true description=true)
+            nesting=(breadcrumb id)}}
+    {{#*inline 'link-slot'}}
+      {{> button--label}}
+    {{/inline}}
+  {{/link}}
+  {{> image}}
+</group>
+{{/use}}

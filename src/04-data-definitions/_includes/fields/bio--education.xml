@@ -1,0 +1,30 @@
+---
+id: education
+label: Education
+fields:
+  - id: degree
+    label: Degree
+    message: Provide the full name of the academic degree this person has earned. Please, avoid the use of punctuations (e.g., 'BA', 'MA', 'MBA', 'JD', 'PhD', 'EdD', 'EdS', etc.).
+  - id: major
+    label: Major
+    message: Enter any majors(s) that apply to this degree.
+  - id: concentration
+    label: Concentration(s) or Specialization(s)
+    message: Enter any concentration(s) or specialization(s) that apply to this degree.
+  - id: school
+    label: School
+    message: Enter the name of the school where this degree was earned.
+  - id: city-state-country
+    label: City, State, and/or Country
+    message: Enter a comma-separated list of the city, state, and/or country where this degree was earned.
+---
+
+{{#use 'bio--education'}}
+<group identifier="{{id}}" label="{{label}}" multiple="true">
+  {{#each fields}}
+  <text help-text="{{message}}"
+        identifier="{{id}}"
+        label="{{label}}"/>
+  {{/each}}
+</group>
+{{/use}}

@@ -1,0 +1,25 @@
+---
+
+---
+
+{{#use 'major-research-help' with='config'}}
+{{#set 'nesting' (breadcrumb id)}}{{/set}}
+{{#set 'id' (concat link-list.id '-' config.link-list.variation.id)}}{{/set}}
+{{#> link-list variation=(object id='research-help' label='Section Major - Research Help')
+               config=(object
+                heading--label=(object
+                  default='Improve Your Research &amp; Writing'
+                  required=true
+                )
+                link=(object
+                  options=(object page=true file=false url=false)
+                  customizations=(object label=true description=false)
+                )
+               )}}
+  {{#*inline 'link-list-slot'}}
+    {{> link variation=(object id='viewall' label='View All')
+             options=(object page=true file=false url=false)
+             customizations=(object label=true description=false)}}
+  {{/inline}}
+{{/link-list}}
+{{/use}}

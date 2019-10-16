@@ -1,12 +1,27 @@
 ---
 id: introduction
 label: Introductory Paragraph
-message: This is a plain text introduction to the content. The template design will apply styles to this paragraph automatically.
+message: Insert a brief introduction for the page. This will be used as an introductory paragraph before the rest of body content.
+
+variants:
+  subtitle:
+    id: subtitle
+    label: Subtitle
+    message: Insert a short subtitle for the page. This will be overlayed on top of the hero image underneath the page title.
+  quote:
+    id: quote
+    label: Quote
+    message: Insert a quote to be featured at the top of the page. Please exclude quotation marks as these will be added automatically.
+  question:
+    id: question
+    label: Question or Statement
+    message: Enter an alternative title for this page that is in question or statement form. This will be displayed at the top of the page instead of the page title.
 ---
 
-{{#use 'introduction'}}
-<text help-text="{{message}}"
-      identifier="{{id}}"
-      label="{{label}}"
-      multi-line="true"/>
+{{#use 'introduction' with=(array 'variant' 'multiline' 'max')}}
+<text help-text="{{#if variant}}{{get 'message' (get variant variants)}}{{else}}{{message}}{{/if}}"
+      identifier="{{#if variant}}{{get 'id' (get variant variants)}}{{else}}{{id}}{{/if}}"
+      label="{{#if variant}}{{get 'label' (get variant variants)}}{{else}}{{label}}{{/if}}"
+      {{#unless (eq multiline false)}}multi-line="true"{{/unless}}
+      {{#if max}}maxlength="{{max}}"{{/if}}/>
 {{/use}}

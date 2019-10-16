@@ -4,7 +4,7 @@ label: Link Type
 message:
 ---
 
-{{#use 'link--type' with='options'}}
+{{#use 'link--type' with=(array 'options' 'nesting')}}
 <text identifier="{{id}}"
       label="{{label}}"
       help-text="{{message}}"
@@ -22,12 +22,12 @@ message:
     {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--customizations.id}}"
     value="{{link--file.label}}"/>
   {{/unless}}
-  {{#unless (eq options.external false)}}
+  {{#unless (eq options.url false)}}
   <radio-item show-fields="
-    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--external.id}},
+    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--url.id}},
     {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--label.id}},
     {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--description.id}}"
-    value="{{link--external.label}}"/>
+    value="{{link--url.label}}"/>
   {{/unless}}
 </text>
 {{/use}}

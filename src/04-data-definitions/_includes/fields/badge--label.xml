@@ -1,0 +1,12 @@
+---
+id: badge-label
+label: Badge Label
+message: Enter a custom label for a badge that will appear on top of this item.
+---
+
+{{#use 'badge--label'}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"
+      {{#if this.default}}default="{{this.default}}"{{/if}}/>
+{{/use}}

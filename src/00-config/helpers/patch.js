@@ -32,6 +32,7 @@ module.exports = {
     // Return truthy or falsey based on result.
     return options.fn ? truthy ? options.fn() : options.inverse() : truthy;
 
-  }
+  },
+  merge: ( base, ...objects ) => _.merge(base, ..._.initial(objects))
 
 };

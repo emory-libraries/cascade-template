@@ -1,0 +1,7 @@
+<system-data-structure>
+	{{> version}}
+	{{> introduction variant='question' multiline=false max=100}}
+	{{> blocks multiple=true}}
+	{{> contacts}}
+	{{> resources}}
+</system-data-structure>

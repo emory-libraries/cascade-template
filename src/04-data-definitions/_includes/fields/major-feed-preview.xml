@@ -1,0 +1,14 @@
+---
+id: feed-preview
+label: Section Major - Feed Preview
+config:
+---
+
+{{#use 'major-feed-preview' with='include'}}
+{{#set 'nesting' (breadcrumb id)}}{{/set}}
+<group id="{{id}}" label="{{label}}">
+  {{> heading--label}}
+  {{#if (includes 'listing' include)}}{{> listing}}{{/if}}
+  {{> feed-flow}}
+</group>
+{{/use}}

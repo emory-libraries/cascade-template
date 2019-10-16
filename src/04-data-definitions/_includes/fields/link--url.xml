@@ -4,8 +4,8 @@ label: External URL
 message: Enter an external URL. This should start with 'http://' or 'https://' (preferred).
 ---
 
-{{#use 'link--external'}}
-{{#unless (eq options.external false)}}
+{{#use 'link--url' with='options'}}
+{{#unless (eq options.url false)}}
 <text help-text="{{message}}"
       identifier="{{id}}"
       label="{{label}}"

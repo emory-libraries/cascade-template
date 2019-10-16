@@ -1,0 +1,41 @@
+---
+id: address
+label: Address
+
+variants:
+  mailing:
+    id: mailing-address
+    label: Mailing Address
+  billing:
+    id: billing-address
+    label: Billing Address
+---
+
+{{#use 'address' with='variant'}}
+{{#if variant}}
+  {{#set 'id' (default (get 'id' (get variant variants)) id)}}{{/set}}
+  {{#set 'label' (default (get 'label' (get variant variants)) label)}}{{/set}}
+{{/if}}
+<group identifier="{{id}}" label="{{label}}">
+  <text identifier="place-name"
+        label="Place Name"
+        help-text="Provide a name for this location (e.g., 'Oxford College Library')." />
+  <text identifier="street-address" 
+        label="Street Address"
+        help-text="Enter the location's street address."/>
+  <text identifier="city"
+        label="City"
+        help-text="Enter the location's city."
+        default="Atlanta"/>
+  <text identifier="state"
+        label="State"
+        help-text="Enter the location's state. Please, provide the full name of the state instead of an abbreviation (e.g., 'Georgia' not 'GA')."
+        default="Georgia"/>
+  <text identifier="zip-code"
+        label="Zip Code"
+        help-text="Enter the location's 5-digit zip code."
+        maxlength="5"
+        default="30322"
+        regular-expression="^\d{5}$"/>
+</group>
+{{/use}}

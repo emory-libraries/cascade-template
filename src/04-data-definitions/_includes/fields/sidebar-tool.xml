@@ -1,0 +1,47 @@
+---
+id: sidebar
+label: Sidebar
+---
+
+{{#use 'sidebar-tool' with='nesting'}}
+{{#set 'nesting' (breadcrumb id)}}{{/set}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> version}}
+  {{> link-list variation=(object id='access' label='Access')
+                config=(object
+                  heading--label=(object
+                    default='Access [Insert Tool Name]'
+                    required=true
+                  )
+                  link=(object
+                    multiple=true
+                    options=(object page=true file=true url=true)
+                    customizations=(object label=true description=false)
+                  )
+                )}}
+  {{> link-list variation=(object id='learn' label='Learn')
+                config=(object
+                  heading--label=(object
+                    default='Learn About [Insert Tool Name]'
+                    required=true
+                  )
+                  link=(object
+                    multiple=true
+                    options=(object page=true file=true url=true)
+                    customizations=(object label=true description=false)
+                  )
+                )}}
+  {{> link-list variation=(object id='materials' label='Materials')
+                config=(object
+                  heading--label=(object
+                    default='Materials in [Insert Tool Name]'
+                    required=true
+                  )
+                  link=(object
+                    multiple=true
+                    options=(object page=true file=true url=true)
+                    customizations=(object label=true description=false)
+                  )
+                )}}
+</group>
+{{/use}}

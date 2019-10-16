@@ -1,0 +1,4 @@
+<system-data-structure>
+  {{> version}}
+  {{> feed--link}}
+</system-data-structure>

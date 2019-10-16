@@ -1,0 +1,15 @@
+<system-data-structure>
+	{{> version}}
+	{{> blocks multiple=true}}
+	{{> tiles multiple=true min=3 max=3 variation=(object label='Recent Issues')}}
+	{{> link-list variation=(object label='Past Issues')
+								exclude='heading'
+								config=(object
+									link=(object
+										variation=(object label='Issue')
+										options=(object page=false file=true url=false)
+										customizations=(object label=false description=false)
+										force='label'
+									)
+								)}}
+</system-data-structure>

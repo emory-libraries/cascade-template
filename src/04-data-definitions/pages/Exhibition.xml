@@ -1,0 +1,11 @@
+<system-data-structure>
+	{{> version}}
+	{{> badge--label default='Exhibition'}}
+	{{> introduction variant='subtitle'}}
+	{{> hero--image}}
+	{{> introduction variant='quote'}}
+	{{> wysiwyg variant='exhibition'}}
+	{{> sidebar-exhibit}}
+	{{> event}}
+	{{> deep-dive}}
+</system-data-structure>

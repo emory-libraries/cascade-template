@@ -1,0 +1,15 @@
+---
+id: column
+label: Column
+---
+
+{{#use 'deep-dive--columns' with=(array min max)}}
+<group identifier="{{id}}"
+       label="{{label}}"
+       maximum-number="{{#if max}}{{max}}{{else}}3{{/if}}"
+       minimum-number="{{#if min}}{{min}}{{else}}1{{/if}}"
+       multiple="true">
+  {{> heading--label}}
+  {{> wysiwyg}}
+</group>
+{{/use}}

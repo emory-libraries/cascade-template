@@ -1,0 +1,30 @@
+---
+fields:
+  - id: display-name
+    label: Display Name
+    message: Enter the person's full name exactly how it should be displayed on the page. Optionally, you may choose to include postnominals here (i.e., 'PhD').
+  - id: given-name
+    label: First Name
+    message: Enter the person's first, or given, name.
+  - id: middle-name
+    label: Middle Name
+    message: Enter the person's middle name.
+  - id: family-name
+    label: Last Name
+    message: Enter the person's last, or family, name.
+  - id: preferred-pronouns
+    label: Preferred pronouns
+    message: Provide a slash-separated list of the person's preferred pronouns (e.g., 'she/her').
+    regex: ^(\w+\/)+(\w+)$
+    format: she/her
+---
+
+{{#use 'bio--location'}}
+{{#each fields}}
+<text identifier="{{id}}"
+      label="{{label}}"
+      help-text="{{message}}"
+      {{#if regex}}regular-expression="{{regex}}"{{/if}}
+      {{#if format}}input-data-format="{{format}}"{{/if}}/>
+{{/each}}
+{{/use}}

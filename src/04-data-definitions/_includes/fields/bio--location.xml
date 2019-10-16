@@ -1,0 +1,29 @@
+---
+id: location
+label: Location
+message: Select the location where this person works.
+values:
+  - Business
+  - Center for Digital Scholarship
+  - Cox Hall Computing Center
+  - Health Sciences
+  - Law
+  - Library Service Center
+  - Music & Media
+  - Oxford College
+  - Rose
+  - Science Commons
+  - Theology
+  - Woodruff
+---
+
+{{#use 'bio--location'}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"
+      type="checkbox">
+  {{#each values}}
+  <checkbox-item value="{{.}}"/>
+  {{/each}}
+</text>
+{{/use}}

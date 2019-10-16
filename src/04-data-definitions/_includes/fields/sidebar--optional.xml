@@ -1,0 +1,14 @@
+---
+id: add-sidebar
+label: Add Sidebar?
+message: Check this box if you'd like to include a sidebar on this page.
+---
+
+{{#use 'sidebar--optional' with=(array 'for' 'nesting')}}
+<text identifier="{{id}}"
+      label="{{label}}"
+      help-text="{{message}}"
+      type="checkbox">
+  <checkbox-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{get 'id' (get for this)}}" value="Yes"/>
+</text>
+{{/use}}

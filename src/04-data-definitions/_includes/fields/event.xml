@@ -1,0 +1,12 @@
+---
+id: calendar-import
+label: Event
+---
+
+{{#use 'event'}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> version}}
+  {{> feed--link}}
+  {{> event--id}}
+</group>
+{{/use}}

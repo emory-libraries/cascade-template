@@ -1,0 +1,18 @@
+---
+id: card
+label: Contact Card
+---
+
+{{#use 'card-contact' with=(array 'nesting' 'min' 'max' 'multiple' 'depth')}}
+<group id="{{id}}"
+       label="{{label}}"
+       {{#if multiple}}
+       multiple="true"
+       {{#if min}}minimum-number="{{min}}"{{/if}}
+       {{#if max}}maximum-number="{{max}}"{{/if}}
+       {{/if}}>
+  {{> link options=(object page=true file=false url=false)
+           customizations=(object label=false description=false)
+           multiple=false}}
+</group>
+{{/use}}

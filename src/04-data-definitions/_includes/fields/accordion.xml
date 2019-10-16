@@ -1,0 +1,14 @@
+---
+
+---
+
+{{#use 'accordion'}}
+{{#> link multiple=true
+         variant='panel'
+         options=(object page=true file=true url=true)
+         customizations=(object label=true description=true)}}
+  {{#*inline 'link-slot'}}
+    {{> button--label}}
+  {{/inline}}
+{{/link}}
+{{/use}}

@@ -1,0 +1,17 @@
+---
+id: contact-info
+label: Contact
+---
+
+{{#use 'sidebar-exhibit--contact'}}
+<group identifier="{{id}}" label="{{label}}">
+    <text identifier="name"
+          label="Contact Name"
+          help-text="Enter the name of the person, department, or group that visitors should contact for more information."/>
+          {{> email override=(object
+            id='contact-info'
+            label='Contact Email Address'
+            message='Enter the email address visitors should contact for more information.'
+          )}}
+</group>
+{{/use}}

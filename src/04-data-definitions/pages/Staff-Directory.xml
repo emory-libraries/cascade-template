@@ -1,0 +1,5 @@
+<system-data-structure>
+	{{> version}}
+	{{> introduction}}
+	{{> cards type='contact' variation=(object label='Staff') depth=3}}
+</system-data-structure>

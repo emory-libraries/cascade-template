@@ -1,0 +1,13 @@
+---
+id: visitor-hours
+label: Visitors
+---
+
+{{#use 'sidebar-exhibit--visitors' with='nesting'}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> link variation=(object label='Visitor Hours')
+           options=(object page=true file=true url=true)
+           customizations=(object label=true description=false)
+           nesting=(breadcrumb id)}}
+</group>
+{{/use}}

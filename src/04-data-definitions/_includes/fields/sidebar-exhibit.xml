@@ -1,0 +1,15 @@
+---
+id: sidebar
+label: Sidebar
+---
+
+{{#use 'sidebar-exhibit' with='nesting'}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> image variation=(object label='Featured')}}
+  {{> sidebar-exhibit--location}}
+  {{> sidebar-exhibit--dates}}
+  {{> sidebar-exhibit--parking}}
+  {{> sidebar-exhibit--visitors}}
+  {{> sidebar-exhibit--contact}}
+</group>
+{{/use}}

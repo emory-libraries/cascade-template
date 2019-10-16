@@ -1,0 +1,11 @@
+<system-data-structure>
+  {{> version}}
+  {{> introduction variant='subtitle'}}
+  {{> hero--image}}
+	{{> feature}}
+	{{> explorer}}
+  {{> tiles include='badge'}}
+  {{> listing}}
+	{{> major-research-help}}
+  {{> major-feed-preview}}
+</system-data-structure>

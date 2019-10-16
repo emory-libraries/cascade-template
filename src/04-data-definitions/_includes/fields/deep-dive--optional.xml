@@ -1,0 +1,10 @@
+---
+id: insert-supplemental-content
+label: Add Deep Dive?
+---
+
+{{#use 'deep-dive--optional' with='nesting'}}
+<text identifier="{{id}}" label="{{label}}" type="checkbox">
+  <checkbox-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{deep-dive.id}}" value="Yes"/>
+</text>
+{{/use}}

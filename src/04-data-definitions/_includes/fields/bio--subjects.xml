@@ -1,0 +1,12 @@
+---
+id: subject-areas
+label: Subject Areas
+---
+
+{{#use 'bio--subjects'}}
+<group identifier="{{id}}" label="{{label}}">
+  <text identifier="expertise"
+        label="Area of Expertise"
+        multiple="true"/>
+</group>
+{{/use}}

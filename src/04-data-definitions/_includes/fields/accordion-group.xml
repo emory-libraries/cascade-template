@@ -1,0 +1,17 @@
+---
+id: accordions
+label: Accordion Groups
+---
+
+{{#use 'accordion-group' with=(array 'multiple' 'min' 'max')}}
+<group identifier="{{id}}"
+       label="{{label}}"
+       {{#if multiple}}
+       multiple="true"
+       {{#if min}}minimum-number="{{min}}"{{/if}}
+       {{#if max}}maximum-number="{{max}}"{{/if}}
+       {{/if}}>
+  {{> heading--label}}
+  {{> accordion}}
+</group>
+{{/use}}

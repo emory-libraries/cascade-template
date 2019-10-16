@@ -1,12 +1,34 @@
 ---
 id: wysiwyg
-label: Rich text
+label: Rich Text
 message:
+
+variants:
+  exhibition:
+    id: details
+    label: Exhibition Details
+    message: Enter a full description about the exhibit.
+  sponsorship:
+    id: sponsorship-statement
+    label: Sponsorship Statement
+    message: Use this field to credit any sponsors. Try to limit this statement to a single paragraph.
+    configuration: Inline Formatting
+  biography:
+    id: wysiwyg
+    label: Biography
+    message: Insert a biography for this person.
 ---
 
-{{#use 'wysiwyg'}}
-<text configuration="Emory Libraries"
+{{#use 'wysiwyg' with=(array 'variant' 'configuration')}}
+{{#if variant}}
+  {{#set 'id' (default (get 'id' (get variant variants)) id)}}{{/set}}
+  {{#set 'label' (default (get 'label' (get variant variants)) label)}}{{/set}}
+  {{#set 'message' (default (get 'message' (get variant variants)) message)}}{{/set}}
+  {{#set 'configuration' (default (get 'configuration' (get variant variants)) configuration)}}{{/set}}
+{{/if}}
+<text configuration="{{#if configuration}}{{configuration}}{{else}}Emory Libraries{{/if}}"
       identifier="{{id}}"
       label="{{label}}"
+      help-text="{{message}}"
       wysiwyg="true"/>
 {{/use}}

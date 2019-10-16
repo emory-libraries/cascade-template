@@ -1,0 +1,33 @@
+---
+id: dates
+label: Dates
+---
+
+{{#use 'sidebar-exhibit--dates'}}
+<group identifier="{{id}}" label="{{label}}">
+  <group identifier="start-date" label="Start Date">
+    <text identifier="date"
+          label="Date"
+          message="Indicate the date when this exhibit starts."
+          type="calendar"/>
+    <text identifier="month-only"
+          label="Display Month Only?"
+          message="Check this box if you wish to display a month for this exhibit rather than an exact date."
+          type="checkbox">
+      <checkbox-item value="Yes"/>
+    </text>
+  </group>
+  <group identifier="end-date" label="End Date">
+    <text identifier="date"
+          label="Date"
+          message="Indicate the date when this exhibit ends."
+          type="calendar"/>
+    <text identifier="month-only"
+          label="Display Month Only?"
+          message="Check this box if you wish to display a month for this exhibit rather than an exact date."
+          type="checkbox">
+      <checkbox-item value="Yes"/>
+    </text>
+  </group>
+</group>
+{{/use}}

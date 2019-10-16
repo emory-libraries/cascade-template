@@ -1,0 +1,12 @@
+<system-data-structure>
+	{{> version}}
+	{{#> link variation=(object label='Exhibition')
+					  multiple=true
+					  options=(object page=true file=true url=true)
+					  customizations=(object label=true description=false)}}
+		{{#*inline 'link-slot'}}
+			{{> button--label default='Exhibition Details'}}
+		{{/inline}}
+	{{/link}}
+	{{> image}}
+</system-data-structure>

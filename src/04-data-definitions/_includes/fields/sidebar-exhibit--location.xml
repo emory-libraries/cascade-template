@@ -1,0 +1,22 @@
+---
+id: location
+label: Location
+---
+
+{{#use 'sidebar-exhibit--location'}}
+<group identifier="{{id}}" label="{{label}}">
+  <text identifier="building"
+        label="Building"
+        help-text="In which building is this exhibit located?"
+        default="Robert W. Woodruff Library"/>
+  <text identifier="room"
+        label="Room"
+        help-text="Enter the room where this exhibit is located within the building, if applicable."/>
+  <text identifier="level"
+        label="Level or Floor"
+        help-text="Indicate the level or floor inside the building that this exhibit is located on, if applicable."/>
+  <text identifier="map-url"
+        label="Map URL"
+        help-text="Insert a link from Google Maps or a similar map service that show this exhibit's geographical location."/>
+</group>
+{{/use}}

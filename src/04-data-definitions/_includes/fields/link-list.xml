@@ -1,14 +1,18 @@
 ---
-id: link-list
+id: links-list
 label: Links
 message:
 ---
 
-{{#use 'link-list'}}
-<group identifier="{{id}}{{#if variation.id}}-{{variation.id}}{{/if}}"
-        label="{{#if variation.label}}{{variation.label}} {{/if}}{{label}}">
-  {{> heading--label}}
-  {{#if icon}}{{> icon}}{{/if}}
-  {{> link}}
+{{#use 'link-list' with=(array 'variation' 'config' 'include' 'nesting' 'exclude' 'force')}}
+{{#if variation.id}}{{#set 'id' (concat id '-' variation.id)}}{{/set}}{{/if}}
+{{#if variation.label}}{{#set 'label' (concat variation.label ' ' label)}}{{/set}}{{/if}}
+<group identifier="{{id}}" label="{{label}}">
+  {{#unless (includes 'heading' exclude)}}{{> heading--label heading--label=(merge heading--label (default config.heading--label (object)))}}{{/unless}}
+  {{#if (includes 'icon' include)}}{{> icon icon=(merge icon (default config.icon (object)))}}{{/if}}
+  {{> link link=(merge link (default config.link (object)))
+           variation=(default config.link.variation null)
+           multiple=(default config.link.multiple true)}}
+  {{#> link-list-slot}}{{/link-list-slot}}
 </group>
 {{/use}}

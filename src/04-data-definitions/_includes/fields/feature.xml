@@ -1,0 +1,18 @@
+---
+id: feature
+label: Feature Box
+---
+
+{{#use 'feature' with='nesting'}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> heading--label variant='context'}}
+  {{#> link options=(object page=true file=true url=true)
+            customizations=(object label=true description=true)
+            nesting=(breadcrumb id)}}
+    {{#*inline 'link-slot'}}
+      {{> button--label}}
+    {{/inline}}
+  {{/link}}
+  {{> image}}
+</group>
+{{/use}}

@@ -4,7 +4,7 @@ label: Cascade File
 message: Select a file in Cascade.
 ---
 
-{{#use 'link--file'}}
+{{#use 'link--file' with='options'}}
 {{#unless (eq options.file false)}}
 <asset help-text="{{message}}"
        identifier="{{id}}"

@@ -1,0 +1,10 @@
+---
+id: include-sponsors
+label: Add Sponsor(s)?
+---
+
+{{#use 'deep-dive--sponsors--optional' with='nesting'}}
+<text identifier="{{id}}" label="{{label}}" type="checkbox">
+  <checkbox-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{deep-dive--sponsors.id}}" value="Yes"/>
+</text>
+{{/use}}

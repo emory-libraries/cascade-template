@@ -1,0 +1,21 @@
+---
+id: content-block
+label: Content Blocks
+---
+
+{{#use 'blocks'}}
+{{#set 'nesting' (breadcrumb id)}}{{/set}}
+<group identifier="{{id}}"
+       label="{{label}}"
+       {{#unless (eq multiple false)}}
+       multiple="true"
+       {{#if max}}maximum-number="{{max}}"{{/if}}
+       {{#if min}}minimum-number="{{min}}"{{/if}}
+       {{/unless}}>
+  {{> blocks--type}}
+  {{> heading}}
+  {{> wysiwyg}}
+  {{> image}}
+  {{> video}}
+</group>
+{{/use}}

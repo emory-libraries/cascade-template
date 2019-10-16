@@ -1,0 +1,13 @@
+---
+id: sponsorship
+label: Sponsors
+
+---
+
+{{#use 'deep-dive--sponsors'}}
+{{#set 'nesting' (breadcrumb id)}}{{/set}}
+{{> deep-dive--sponsors--optional}}
+<group id="{{id}}" label="{{label}}">
+  {{> wysiwyg variant='sponsorship'}}
+</group>
+{{/use}}

@@ -1,0 +1,18 @@
+---
+id: wayfinder
+label: Wayfinder
+---
+
+{{#use 'wayfinder' with='nesting'}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> heading--label variant='context'}}
+  {{> link  variant='button'
+            multiple=true
+            min=2
+            max=2
+            options=(object page=true file=true url=true)
+            customizations=(object label=true description=true)
+            nesting=(breadcrumb id)}}
+  {{> image}}
+</group>
+{{/use}}

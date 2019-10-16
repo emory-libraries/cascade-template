@@ -1,0 +1,17 @@
+---
+id: parking-info
+label: Parking
+---
+
+{{#use 'sidebar-exhibit--parking' with='nesting'}}
+<group identifier="{{id}}" label="{{label}}">
+  <text identifier="parking-location"
+        label="Parking Location"
+        help-text="Enter the name of the parking deck or lot that visitors should use."
+  			default="Fishburne Parking Deck"/>
+  {{> link variation=(object label='Parking Information')
+           options=(object page=true file=true url=true)
+           customizations=(object label=true description=false)
+           nesting=(breadcrumb id)}}
+</group>
+{{/use}}

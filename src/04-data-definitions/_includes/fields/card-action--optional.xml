@@ -1,0 +1,14 @@
+---
+id: action-box
+label: Add Action Card?
+message: Check this box if you'd like to include an action card on this page.
+---
+
+{{#use 'card-action--optional' with=(array 'for' 'nesting')}}
+<text identifier="{{id}}"
+      label="{{label}}"
+      help-text="{{message}}"
+      type="checkbox">
+  <checkbox-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{get 'id' (get for this)}}" value="Yes"/>
+</text>
+{{/use}}

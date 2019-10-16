@@ -1,5 +1,6 @@
 // Load dependencies.
 const _ = require('lodash');
+const kind = require('kind-of');
 
 // Register variable helpers.
 module.exports = {
@@ -51,7 +52,7 @@ module.exports = {
       const included = {};
 
       // Capture the included context.
-      included[include] = _.get(this, include, {});
+      included[include] = _.get(this, include);
 
       // Merge the included context into the scoped context.
       scoped = _.merge(scoped, included);
@@ -67,6 +68,9 @@ module.exports = {
     // Render the block with the new context that has the scoped variables merged.
     return options.fn ? options.fn(context) : context;
 
-  }
+  },
+
+  // Get the native type of value.
+  kindOf: ( value ) => kind(value)
 
 };

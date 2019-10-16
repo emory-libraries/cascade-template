@@ -1,0 +1,27 @@
+---
+id: contact-info
+label: Contact Information
+fields:
+  - include: email
+  - include: phone
+  - include: fax
+  - id: libcal
+    label: LibCal URL
+    message: Provide the full LibCal URL for this person, if applicable.
+  - include: address
+    variant: mailing
+---
+
+{{#use 'bio--contact'}}
+<group id="{{id}}" label="{{label}}">
+  {{#each fields}}
+    {{#if include}}
+      {{> (valueOf include)}}
+    {{else}}
+      <text identifier="{{id}}"
+            label="{{label}}"
+            help-text="{{message}}"/>
+    {{/if}}
+  {{/each}}
+</group>
+{{/use}}

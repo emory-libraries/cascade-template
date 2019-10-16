@@ -1,0 +1,8 @@
+<system-data-structure>
+	{{> version}}
+	{{> introduction}}
+	{{> blocks multiple=true}}
+	{{> sidebar-tool}}
+	{{> contacts}}
+	{{> resources}}
+</system-data-structure>

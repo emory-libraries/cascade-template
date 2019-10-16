@@ -1,0 +1,13 @@
+---
+id: placeholder
+label: Search Placeholder
+message: Enter some placeholder text to be displayed within the search box by default.
+default: Search
+---
+
+{{#use 'search--placeholder' with='default'}}
+<text default="{{default this.default search--placeholder.default}}"
+      help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"/>
+{{/use}}

@@ -21,17 +21,18 @@
   },
   "homepage": "https://github.com/emory-libraries/cascade-template#readme",
   "devDependencies": {
+    "assemble-handlebars": "^0.4.1",
     "grunt": "^1.0.4",
     "grunt-assemble": "^0.6.3",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-xml-formatter": "^1.0.2",
     "handlebars-helpers": "^0.10.0",
-    "handlebars-layouts": "^3.1.4",
     "kind-of": "^6.0.2",
     "load-grunt-tasks": "^5.1.0",
     "lodash": "^4.17.15",
     "path": "^0.12.7",
+    "prettify-xml": "^1.2.0",
     "xml-formatter": "^1.1.0"
   },
   "dependencies": {}

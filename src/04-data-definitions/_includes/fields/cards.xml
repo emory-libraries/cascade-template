@@ -1,0 +1,16 @@
+---
+id: cards
+label: Cards
+---
+
+{{#use 'cards' with=(array 'min' 'max' 'variation' 'type')}}
+{{#if variation.id}}{{#set 'id' (concat id '-' variation.id)}}{{/set}}{{/if}}
+{{#if variation.label}}{{#set 'label' (concat variation.label ' ' label)}}{{/set}}{{/if}}
+<group identifier="{{id}}"
+       label="{{label}}">
+  {{> (concat 'card-' type) multiple=true
+                            min=(default min null)
+                            max=(default max null)
+                            nesting=(breadcrumb id)}}
+</group>
+{{/use}}

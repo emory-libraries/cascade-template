@@ -1,0 +1,10 @@
+---
+id: url
+label: Feed URL (RSS, Atom, or JSON)
+message: Enter a feed URL from an external source such as a blog, news site, or Trumba calendar.
+size: 50
+---
+
+{{#use 'feed--link'}}
+<text help-text="{{message}}" identifier="{{id}}" label="{{label}}" size="{{size}}"/>
+{{/use}}

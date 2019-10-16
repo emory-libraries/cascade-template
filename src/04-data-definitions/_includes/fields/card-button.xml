@@ -1,0 +1,18 @@
+---
+id: card
+label: Button Card
+---
+
+{{#use 'card-button' with=(array 'nesting' 'min' 'max' 'multiple')}}
+<group id="{{id}}"
+       label="{{label}}"
+       {{#if multiple}}
+       multiple="true"
+       {{#if min}}minimum-number="{{min}}"{{/if}}
+       {{#if max}}maximum-number="{{max}}"{{/if}}
+       {{/if}}>
+  {{> link options=(object page=true file=true url=true)
+           customizations=(object label=true description=false)
+           multiple=false}}
+</group>
+{{/use}}

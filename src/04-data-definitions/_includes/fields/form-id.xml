@@ -1,0 +1,10 @@
+---
+id: form-id
+label: LibWizard Form ID
+message: Enter the ID for a LibWizard form that you wish to embed on this page. A LibWizard form's ID can be found within its widget's generated embed code (e.g., 'form_1fbb17f25c20dd0118b0dee14923ecd4' or '1fbb17f25c20dd0118b0dee14923ecd4'). Please, DO NOT COPY AND PASTE THE FULL WIDGET'S CODE HERE.
+
+{{#use 'form-id'}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"/>
+{{/use}}

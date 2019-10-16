@@ -1,0 +1,4 @@
+<system-data-structure>
+	{{> version}}
+	{{> introduction}}
+</system-data-structure>

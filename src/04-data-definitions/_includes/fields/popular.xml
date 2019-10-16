@@ -1,0 +1,34 @@
+---
+id: popular
+label: Popular
+---
+
+{{#use 'popular'}}
+<group identifier="{{id}}" label="{{label}}">
+{{#set 'nesting' (breadcrumb id)}}{{/set}}
+  {{> link-list variation=(object id='popular' label='Popular')
+                config=(object
+                  heading--label=(object
+                    default="Popular Links"
+                  )
+                  link=(object
+                    options=(object page=true file=true url=true)
+                    customizations=(object label=true description=false)
+                    multiple=true
+                    min=1
+                    max=4
+                  )
+                )}}
+  <group identifier="hours-directions" label="Hours and Directions">
+    {{#set 'nesting' (breadcrumb 'hours-directions')}}{{/set}}
+    {{> heading--label default="Today's Hours"}}
+    {{> link--page variant='displayed-hours'}}
+    {{> link variation=(object id='hours' label='Hours')
+             options=(object page=true file=true url=true)
+             customizations=(object label=true description=false)}}
+   {{> link variation=(object id='directions' label='Directions')
+            options=(object page=true file=true url=true)
+            customizations=(object label=true description=false)}}
+  </group>
+</group>
+{{/use}}

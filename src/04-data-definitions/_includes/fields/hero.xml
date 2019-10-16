@@ -1,0 +1,14 @@
+---
+id: hero
+label: Hero
+---
+
+{{#use 'hero' with='include'}}
+<group identifier="{{id}}" label="{{label}}">
+  {{#if (includes 'badge' include)}}{{> badge--label}}{{/if}}
+  {{> link options=(object page=true file=false url=true)
+           customizations=(object label=true description=false)
+           nesting=(breadcrumb id)}}
+  {{> image}}
+</group>
+{{/use}}

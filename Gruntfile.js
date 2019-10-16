@@ -1,6 +1,7 @@
 // Load dependencies.
 const _ = require('lodash');
 const path = require('path');
+const pretty = require('prettify-xml');
 
 // Export grunt tasks.
 module.exports = (grunt) => {
@@ -18,7 +19,7 @@ module.exports = (grunt) => {
   ];
 
   // Helps configuring sources for assemble.
-  const assemble = ( dir, ext ) => {
+  const compile = ( dir, ext ) => {
 
     return _.set({}, `${dir}-${_.trimStart(ext, '.')}`, {
       options: {
@@ -54,7 +55,6 @@ module.exports = (grunt) => {
       options: {
         helpers: [
           'handlebars-helpers',
-          'handlebars-layouts',
           'src/00-config/helpers/**/*.js'
         ],
         plugins: [],
@@ -62,7 +62,7 @@ module.exports = (grunt) => {
     }, _.reduce(src, (result, source) => {
 
       // Build the configurations for the source folder and its respective file extensions.
-      const config = _.reduce(source.exts, (config, ext) => _.merge(config, assemble(source.folder, ext)), {});
+      const config = _.reduce(source.exts, (config, ext) => _.merge(config, compile(source.folder, ext)), {});
 
       // Continue building the configurations.
       return _.merge(result, config);
@@ -82,7 +82,8 @@ module.exports = (grunt) => {
         files: [
           'Gruntfile.js',
           'package.json'
-        ]
+        ],
+        tasks: ['build']
       }
     },
     clean: {
@@ -111,7 +112,78 @@ module.exports = (grunt) => {
 
   // Register tasks.
   grunt.registerTask('default', ['dev']);
-  grunt.registerTask('build', ['assemble', 'xml-formatter', 'uglify']);
+  grunt.registerTask('prettify', 'Prettify XML by removing extra whitespace', function() {
+
+    // Get files to prettify.
+    const files = grunt.file.expand('dist/**/*.xml');
+
+    // Initialize a utility method for prettifying XML content.
+    const prettify = (xml) => {
+
+      // Remove empty lines.
+      xml = xml.replace(/^\s*$/gm, '');
+
+      // Collapse multiple line breaks to a single line break.
+      xml = xml.replace(/\n{2,}/g, '\n');
+
+      // Initialize helper regexes.
+      const regex = {
+        attr: /([a-z:-]+=")((?:[\s\S])*?)(")/g,
+        node: /(<[a-z-:]+ )(.*?)(\/?>)/g
+      };
+
+      // Initialize helper variables.
+      let attr, node;
+
+      // Remove extra whitespace in attributes one by one.
+      while( !_.isNil(attr = regex.attr.exec(xml)) ) {
+
+        // Remove extra whitespace from the attribute value.
+        attr[2] = attr[2].replace(/\n/g, ' ').replace(/\s{2,}/g, ' ').trim();
+
+        // Save the cleaned attribute.
+        xml = xml.replace(attr[0], `${attr[1]}${attr[2]}${attr[3]}`);
+
+      }
+
+      // Remove extra whitespace from nodes one by one.
+      while( !_.isNil(node = regex.node.exec(xml)) ) {
+
+        // Remove extra whitespace from the node.
+        node[2] = node[2].replace(/\s{2,}/g, ' ').trim();
+
+        // Save the cleaned node.
+        xml = xml.replace(node[0], `${node[1]}${node[2]}${node[3]}`);
+
+      }
+
+      // Pretty print the XML, and return it.
+      return pretty(xml, {
+        indent: 2,
+        newline: '\n'
+      });
+
+    };
+
+    // Prettify each file.
+    _.each(files, (file) => {
+
+      // Read the file's contents.
+      let contents = grunt.file.read(file);
+
+      // Prettify the file's contents.
+      contents = prettify(contents);
+
+      // Save the file with its prettified contents.
+      grunt.file.write(file, contents);
+
+    });
+
+    // Output a success message.
+    grunt.log.ok(`${files.length} files prettified.`);
+
+  });
+  grunt.registerTask('build', ['assemble', 'xml-formatter', 'prettify']);
   grunt.registerTask('dev', ['clean', 'build', 'watch']);
   grunt.registerTask('dist', ['clean', 'build']);
 

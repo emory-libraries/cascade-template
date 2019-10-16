@@ -1,0 +1,16 @@
+---
+id: tiles
+label: Tiles
+---
+
+{{#use 'tiles' with=(array 'min' 'max' 'include' 'variation')}}
+{{#if variation.id}}{{#set 'id' (concat id '-' variation.id)}}{{/set}}{{/if}}
+{{#if variation.label}}{{#set 'label' (concat variation.label ' ' label)}}{{/set}}{{/if}}
+<group identifier="{{id}}"
+       label="{{label}}">
+  {{> tile multiple=true
+           min=(default min null)
+           max=(default max null)
+           nesting=(breadcrumb id)}}
+</group>
+{{/use}}

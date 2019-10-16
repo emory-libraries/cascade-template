@@ -1,0 +1,47 @@
+---
+id: sidebar
+label: Sidebar
+---
+
+{{#use 'sidebar-material' with='nesting'}}
+{{#set 'nesting' (breadcrumb id)}}{{/set}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> version}}
+  {{> link-list variation=(object id='access' label='Borrow')
+                config=(object
+                  heading--label=(object
+                    default='Where to Borrow'
+                    required=true
+                  )
+                  link=(object
+                    multiple=true
+                    options=(object page=true file=true url=true)
+                    customizations=(object label=true description=false)
+                  )
+                )}}
+  {{> link-list variation=(object id='learn' label='Search')
+                config=(object
+                  heading--label=(object
+                    default='Where to Search'
+                    required=true
+                  )
+                  link=(object
+                    multiple=true
+                    options=(object page=true file=true url=true)
+                    customizations=(object label=true description=false)
+                  )
+                )}}
+  {{> link-list variation=(object id='materials' label='Access')
+                config=(object
+                  heading--label=(object
+                    default='Where to Access'
+                    required=true
+                  )
+                  link=(object
+                    multiple=true
+                    options=(object page=true file=true url=true)
+                    customizations=(object label=true description=false)
+                  )
+                )}}
+</group>
+{{/use}}

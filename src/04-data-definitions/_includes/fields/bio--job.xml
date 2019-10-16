@@ -1,0 +1,14 @@
+---
+fields:
+  - id: job-title
+    label: Job Title
+    message: Enter the person's job title.
+---
+
+{{#use 'bio--job'}}
+{{#each fields}}
+<text identifier="{{id}}"
+      label="{{label}}"
+      help-text="{{message}}"/>
+{{/each}}
+{{/use}}

@@ -1,0 +1,10 @@
+---
+id: event-id
+label: Event ID
+message: Enter the event's ID, which can be used to extract information about this event from the given feed.
+size: 25
+---
+
+{{#use 'event--id'}}
+<text help-text="{{message}}" identifier="{{id}}" label="{{label}}" size="{{size}}"/>
+{{/use}}

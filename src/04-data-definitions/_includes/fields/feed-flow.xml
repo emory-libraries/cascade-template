@@ -1,0 +1,11 @@
+---
+id: feeds
+label: Flow Feed Preview
+---
+
+{{#use 'feed-flow' with='nesting'}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> heading--label}}
+  {{> feed multiple=true max=2 min=2 nesting=(breadcrumb id)}}
+</group>
+{{/use}}

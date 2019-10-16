@@ -1,0 +1,10 @@
+---
+id: slider
+label: Slider
+---
+
+{{#use 'slider'}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> slide multiple=true nesting=(breadcrumb id)}}
+</group>
+{{/use}}
