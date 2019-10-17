@@ -1,0 +1,10 @@
+---
+id: quote
+label: Quote
+---
+
+{{#use 'bio--quote' with='required'}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> introduction variant='quote'}}
+</group>
+{{/use}}

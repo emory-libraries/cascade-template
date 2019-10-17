@@ -3,11 +3,12 @@ id: subject-areas
 label: Subject Areas
 ---
 
-{{#use 'bio--subjects'}}
+{{#use 'bio--subjects' with='required'}}
 <group identifier="{{id}}" label="{{label}}">
   <text identifier="expertise"
         label="Area of Expertise"
         help-text="Enter the subject areas that this librarian specializes in. Insert one subject area per textbox."
-        multiple="true"/>
+        multiple="true"
+        {{#if required}}required="true"{{/if}}/>
 </group>
 {{/use}}

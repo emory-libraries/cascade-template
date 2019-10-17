@@ -4,7 +4,8 @@ label: Education
 fields:
   - id: degree
     label: Degree
-    message: Provide the full name of the academic degree this person has earned. Avoid using punctuations (e.g., 'BA', 'MA', 'MBA', 'JD', 'PhD', 'EdD', 'EdS', etc.).
+    message: Provide the abbreviated name of the academic degree (e.g., 'BA', 'MA', 'MBA', 'JD', 'PhD', 'EdD', 'EdS', etc.). Avoid using punctuation marks.
+    required: true
   - id: major
     label: Major
     message: Enter any majors(s) that apply to this degree.
@@ -14,6 +15,7 @@ fields:
   - id: school
     label: School
     message: Enter the name of the school where this degree was earned.
+    required: true
   - id: city-state-country
     label: City, State, and/or Country
     message: Enter a comma-separated list of the city, state, and/or country where this degree was earned.
@@ -21,10 +23,17 @@ fields:
 
 {{#use 'bio--education'}}
 <group identifier="{{id}}" label="{{label}}" multiple="true">
+  <text identifier="display-with-name"
+        label="Display After Name?"
+        help-text="Check this box if you would like to have this postnominal displayed after your name."
+        type="checkbox">
+    <checkbox-item value="Yes"/>
+  </text>
   {{#each fields}}
   <text help-text="{{message}}"
         identifier="{{id}}"
-        label="{{label}}"/>
+        label="{{label}}"
+        {{#if required}}required="true"{{/if}}/>
   {{/each}}
 </group>
 {{/use}}

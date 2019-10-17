@@ -4,9 +4,10 @@ label: Image File
 message: Select an image file from within Cascade.
 ---
 
-{{#use 'image--file'}}
+{{#use 'image--file' with='required'}}
 <asset help-text="{{message}}"
        identifier="{{id}}"
        label="{{label}}"
-       type="file"/>
+       type="file"
+       {{#if required}}required="true"{{/if}}/>
 {{/use}}

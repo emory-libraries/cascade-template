@@ -4,8 +4,10 @@ label: Photo Credit
 message: Be kind and credit the photographer or source if possible.
 ---
 
-{{#use 'image--credit'}}
+{{#use 'image--credit' with='exclude'}}
+{{#unless (includes 'credit' exclude)}}
 <text help-text="{{message}}"
       identifier="{{id}}"
       label="{{label}}"/>
+{{/unless}}
 {{/use}}

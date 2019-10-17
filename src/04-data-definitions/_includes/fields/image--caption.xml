@@ -4,8 +4,9 @@ label: Caption or Alt Text
 message: Add a brief caption or description of the image for screen readers.
 ---
 
-{{#use 'image--caption'}}
+{{#use 'image--caption' with='required'}}
 <text help-text="{{message}}"
       identifier="{{id}}"
-      label="{{label}}"/>
+      label="{{label}}"
+      {{#if required}}required="true"{{/if}}/>
 {{/use}}

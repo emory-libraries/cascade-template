@@ -1,0 +1,23 @@
+---
+id: profile-options
+label: Profile Options
+---
+
+{{#use 'bio--options' with='nesting'}}
+<text identifier="{{id}}" label="{{label}}" type="checkbox">
+	<checkbox-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{image.id}}"
+                 value="{{concat 'Profile ' image.label}}"/>
+	<checkbox-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{bio--quote.id}}"
+                 value="{{bio--quote.label}}"/>
+	<checkbox-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{bio--bio.id}}"
+                 value="{{bio--bio.label}}"/>
+	<checkbox-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{bio--education.id}}"
+                 value="{{bio--education.label}}"/>
+	<checkbox-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{bio--subjects.id}}"
+                 value="{{bio--subjects.label}}"/>
+	<checkbox-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}research-guides-link"
+                 value="{{concat 'Research Guides ' link.label}}"/>
+	<checkbox-item show-fields="{{#if nesting}}{{nesting}}/{{/if}}cv"
+                 value="{{concat 'Curriculum Vitae (CV) ' link.label}}"/>
+</text>
+{{/use}}

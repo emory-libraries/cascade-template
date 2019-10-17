@@ -3,19 +3,21 @@
 	{{> bio--name}}
 	{{> bio--job}}
 	{{> bio--location}}
-	{{> bio--librarian}}
-	{{> image variation=(object label='Profile')}}
-	{{> introduction variant='quote'}}
-	{{> wysiwyg variant='biography'}}
-	{{> bio--education}}
 	{{> bio--contact}}
-	{{> bio--subjects}}
-	{{> link variation=(object id='research-guides' label='Research Guides')
+	{{> bio--options}}
+	{{> image variation=(object label='Profile') exclude='credit' required=true}}
+	{{> bio--quote required=true}}
+	{{> bio--bio required=true}}
+	{{> bio--education}}
+	{{> bio--subjects required=true}}
+	{{> link variation=(object label='Research Guides')
+					 override=(object id='research-guides-link')
 					 options=(object page=false file=false url=true)
 					 customizations=(object label=false description=false)
 					 required=true}}
-	{{> link variation=(object id='cv' label='Curriculum Vitae (CV)')
+	{{> link variation=(object label='Curriculum Vitae (CV)')
+					 override=(object id='cv')
  					 options=(object page=false file=true url=false)
  					 customizations=(object label=false description=false)
-					 required=false}}
+					 required=true}}
 </system-data-structure>

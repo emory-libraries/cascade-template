@@ -18,13 +18,17 @@ variants:
     label: Panel
 ---
 
-{{#use 'link' with=(array 'options' 'customizations' 'variation' 'multiple' 'max' 'min' 'nesting' 'force' 'required')}}
+{{#use 'link' with=(array 'options' 'customizations' 'variation' 'multiple' 'max' 'min' 'nesting' 'force' 'required' 'override')}}
 {{#if variant}}
   {{#set 'id' (get 'id' (get variant variants))}}{{/set}}
   {{#set 'label' (get 'label' (get variant variants))}}{{/set}}
 {{else}}
   {{#if variation.id}}{{#set 'id' (concat id '-' variation.id)}}{{/set}}{{/if}}
   {{#if variation.label}}{{#set 'label' (concat variation.label ' ' label)}}{{/set}}{{/if}}
+{{/if}}
+{{#if override}}
+  {{#set 'id' (default override.id id)}}{{/set}}
+  {{#set 'label' (default override.label label)}}{{/set}}
 {{/if}}
 <group identifier="{{id}}" label="{{label}}"
        {{#if (eq multiple true)}}

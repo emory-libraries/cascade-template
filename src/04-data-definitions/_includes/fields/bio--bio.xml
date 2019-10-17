@@ -1,0 +1,10 @@
+---
+id: description
+label: Biography
+---
+
+{{#use 'bio--bio' with='required'}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> wysiwyg variant='biography'}}
+</group>
+{{/use}}

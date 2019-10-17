@@ -10,7 +10,6 @@ fields:
   - id: libcal
     label: LibCal URL
     message: Provide the full LibCal URL for this person, if applicable.
-    required: true
   - include: address
     variant: mailing
 ---

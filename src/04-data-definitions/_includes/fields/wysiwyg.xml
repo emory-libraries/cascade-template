@@ -19,7 +19,7 @@ variants:
     message: Insert a biography for this person.
 ---
 
-{{#use 'wysiwyg' with=(array 'variant' 'configuration')}}
+{{#use 'wysiwyg' with=(array 'variant' 'configuration' 'required')}}
 {{#if variant}}
   {{#set 'id' (default (get 'id' (get variant variants)) id)}}{{/set}}
   {{#set 'label' (default (get 'label' (get variant variants)) label)}}{{/set}}
@@ -30,5 +30,6 @@ variants:
       identifier="{{id}}"
       label="{{label}}"
       help-text="{{message}}"
-      wysiwyg="true"/>
+      wysiwyg="true"
+      {{#if required}}required="true"{{/if}}/>
 {{/use}}

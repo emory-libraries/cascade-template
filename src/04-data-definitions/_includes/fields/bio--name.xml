@@ -2,7 +2,7 @@
 fields:
   - id: display-name
     label: Display Name
-    message: Enter the person's full name exactly how it should be displayed on the page. Optionally, you may choose to include postnominals here (i.e., 'PhD').
+    message: Enter the person's full name exactly how it should be displayed on the page. Exclude any postnominals here (i.e., 'PhD').
     required: true
   - id: given-name
     label: First Name
