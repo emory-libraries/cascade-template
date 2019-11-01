@@ -5,6 +5,10 @@ message: Enter a feed URL from an external source such as a blog, news site, or 
 size: 50
 ---
 
-{{#use 'feed--link'}}
-<text help-text="{{message}}" identifier="{{id}}" label="{{label}}" size="{{size}}"/>
+{{#use 'feed--link' with='required'}}
+<text help-text="{{message}}"
+      identifier="{{id}}"
+      label="{{label}}"
+      size="{{size}}"
+      {{#if required}}required="true"{{/if}}/>
 {{/use}}

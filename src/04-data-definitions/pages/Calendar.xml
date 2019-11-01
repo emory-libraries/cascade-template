@@ -1,6 +1,6 @@
 <system-data-structure>
   {{> calendar--archive}}
-  {{> feed--link}}
+  {{> feed--link required=true}}
   {{> link variation=(object label='Button')
            options=(object page=true file=false url=true)
            customizations=(object label=true description=false)}}
