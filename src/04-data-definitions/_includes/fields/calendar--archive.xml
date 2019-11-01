@@ -1,0 +1,14 @@
+---
+id: archive
+label: Archive Mode?
+message: Check this box to display past events instead of current and future events.
+---
+
+{{#use 'calendar--archive'}}
+<text identifier="{{id}}"
+      label="{{label}}"
+      help-text="{{message}}"
+      type="checkbox">
+  <checkbox-item value="Yes"/>
+</text>
+{{/use}}
