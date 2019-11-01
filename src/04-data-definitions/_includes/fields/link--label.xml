@@ -4,11 +4,11 @@ label: Link Label
 message: Enter a custom label for this link.
 ---
 
-{{#use 'link--label' with=(array 'customizations' 'force')}}
+{{#use 'link--label' with=(array 'customizations' 'force' 'required')}}
 {{#if (or (neq customizations.label false) (includes 'label' force))}}
 <text help-text="{{message}}"
       identifier="{{id}}"
       label="{{label}}"
-      required="true"/>
+      {{#if (or (eq required true) (includes 'label' required))}}required="true"{{/if}}/>
 {{/if}}
 {{/use}}

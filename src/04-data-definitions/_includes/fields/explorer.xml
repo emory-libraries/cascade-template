@@ -5,13 +5,13 @@ label: Explorer
 
 {{#use 'explorer' with='nesting'}}
 <group identifier="{{id}}" label="{{label}}">
-  {{> version}}
-  {{> heading--label max=15}}
+  {{> heading--label max=15 required=true default='Popular Links'}}
   {{> link multiple=true
            min=3
            max=8
            options=(object page=true file=true url=true)
-           customizations=(object label=true description=true)
-           nesting=(breadcrumb id)}}
+           customizations=(object label=true description=false)
+           nesting=(breadcrumb id)
+           required='label'}}
 </group>
 {{/use}}

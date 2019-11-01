@@ -1,12 +1,13 @@
 ---
 id: button-Label
 label: Button Label
-message:
+message: Enter a custom label for the button that will be displayed here.
 ---
 
-{{#use 'button--label' with='default'}}
+{{#use 'button--label' with=(array 'default' 'required')}}
 <text identifier="{{id}}"
       label="{{label}}"
       help-text="{{message}}"
-      {{#if this.default}}default="{{this.default}}"{{/if}}/>
+      {{#if this.default}}default="{{this.default}}"{{/if}}
+      {{#if required}}required="true"{{/if}}/>
 {{/use}}

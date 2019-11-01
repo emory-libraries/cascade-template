@@ -4,9 +4,10 @@ label: Badge Label
 message: Enter a custom label for a badge that will appear on top of this item.
 ---
 
-{{#use 'badge--label'}}
+{{#use 'badge--label' with='required'}}
 <text help-text="{{message}}"
       identifier="{{id}}"
       label="{{label}}"
-      {{#if this.default}}default="{{this.default}}"{{/if}}/>
+      {{#if this.default}}default="{{this.default}}"{{/if}}
+      {{#if required}}required="true"{{/if}}/>
 {{/use}}

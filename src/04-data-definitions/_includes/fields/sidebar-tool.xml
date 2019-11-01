@@ -6,7 +6,6 @@ label: Sidebar
 {{#use 'sidebar-tool' with='nesting'}}
 {{#set 'nesting' (breadcrumb id)}}{{/set}}
 <group identifier="{{id}}" label="{{label}}">
-  {{> version}}
   {{> link-list variation=(object id='access' label='Access')
                 config=(object
                   heading--label=(object

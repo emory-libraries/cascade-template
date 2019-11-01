@@ -21,7 +21,7 @@ module.exports = {
     nesting = _.concat(nesting, ...breadcrumbs);
 
     // Return the formatted breadcrumb trail.
-    return nesting.join('/');
+    return _.trimStart(nesting.join('/'), '/');
 
   },
 

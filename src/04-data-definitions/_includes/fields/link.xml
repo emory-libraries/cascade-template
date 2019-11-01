@@ -36,7 +36,6 @@ variants:
        {{#if max}}maximum-number="{{max}}"{{/if}}
        {{#if min}}minimum-number="{{min}}"{{/if}}
        {{/if}}>
-  {{> version}}
   {{> link--type nesting=(breadcrumb id)}}
   {{> link--page}}
   {{> link--file}}

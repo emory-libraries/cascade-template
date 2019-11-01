@@ -1,5 +1,4 @@
 <system-data-structure>
-	{{> version}}
 	{{> introduction}}
 	{{> link-list variation=(object label='Research Help')}}
 	{{> cards type='research-help' variation=(object label='Research Help')}}

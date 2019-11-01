@@ -1,5 +1,4 @@
 <system-data-structure>
-	{{> version}}
 	{{> hero include='badge'}}
 	{{> popular}}
 	{{> slider}}

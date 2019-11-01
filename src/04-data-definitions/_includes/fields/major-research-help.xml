@@ -2,24 +2,32 @@
 
 ---
 
-{{#use 'major-research-help' with='config'}}
+{{#use 'major-research-help' with=(array 'config' 'required')}}
+{{#set 'id' (concat link-list.id '-research-help')}}{{/set}}
+{{#unless required}}
+  {{> major--optional id='add-research-help'
+                      label='Include Research Help Section?'
+                      message='Check this box to include a Research Help section on this page.'
+                      toggles=this}}
+{{/unless}}
 {{#set 'nesting' (breadcrumb id)}}{{/set}}
-{{#set 'id' (concat link-list.id '-' config.link-list.variation.id)}}{{/set}}
 {{#> link-list variation=(object id='research-help' label='Section Major - Research Help')
                config=(object
                 heading--label=(object
-                  default='Improve Your Research &amp; Writing'
+                  default='Improve Your Research & Writing'
                   required=true
                 )
                 link=(object
                   options=(object page=true file=false url=false)
                   customizations=(object label=true description=false)
+                  required='label'
                 )
                )}}
   {{#*inline 'link-list-slot'}}
     {{> link variation=(object id='viewall' label='View All')
              options=(object page=true file=false url=false)
-             customizations=(object label=true description=false)}}
+             customizations=(object label=true description=false)
+             required='label'}}
   {{/inline}}
 {{/link-list}}
 {{/use}}

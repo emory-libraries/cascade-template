@@ -7,7 +7,6 @@ label: Sidebar
 {{#set 'nesting' (breadcrumb id)}}{{/set}}
 {{> sidebar--optional for='sidebar-info'}}
 <group identifier="{{id}}" label="{{label}}">
-  {{> version}}
   {{> explorer}}
   {{> card-action--optional}}
   {{> card-action}}

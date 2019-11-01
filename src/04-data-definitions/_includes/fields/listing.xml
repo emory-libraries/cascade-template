@@ -3,18 +3,19 @@ id: listing
 label: Listing
 ---
 
-{{#use 'listing' with='nesting'}}
+{{#use 'listing' with=(array 'nesting' 'required')}}
+{{#unless required}}{{> listing--optional}}{{/unless}}
 <group identifier="{{id}}" label="{{label}}">
-  {{> version}}
-  {{> badge--label}}
+  {{> badge--label required=true}}
   {{> heading--label variant='context'}}
   {{#> link options=(object page=true file=true url=true)
             customizations=(object label=true description=true)
-            nesting=(breadcrumb id)}}
+            nesting=(breadcrumb id)
+            required='label'}}
     {{#*inline 'link-slot'}}
-      {{> button--label}}
+      {{> button--label required=true}}
     {{/inline}}
   {{/link}}
-  {{> image}}
+  {{> image required=true}}
 </group>
 {{/use}}

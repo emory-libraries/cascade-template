@@ -1,5 +1,4 @@
 <system-data-structure>
-	{{> version}}
 	{{> blocks multiple=true}}
 	{{> tiles multiple=true min=3 max=3 variation=(object label='Recent Issues')}}
 	{{> link-list variation=(object label='Past Issues')

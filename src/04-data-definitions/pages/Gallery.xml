@@ -1,5 +1,4 @@
 <system-data-structure>
-	{{> version}}
 	{{#> link variation=(object label='Exhibition')
 					  multiple=true
 					  options=(object page=true file=true url=true)

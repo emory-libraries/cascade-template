@@ -1,5 +1,4 @@
 <system-data-structure>
-	{{> version}}
 	{{> introduction}}
 	{{> form-id}}
 </system-data-structure>

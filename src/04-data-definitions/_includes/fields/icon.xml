@@ -1,11 +1,13 @@
 ---
 id: icon
 label: Icon ID
-message: Browse or search for an icon id at http://template.library.emory.edu/styleguide/patternlibrary/current/patterns/00-meta-20-assets-icons/00-meta-20-assets-icons.html. An example of an icon ID is 'material-help_outline'.
+message: Choose an icon by ID at http://template.library.emory.edu/styleguide/patternlibrary/current/?p=meta-icons (e.g., 'material-mail').
 ---
 
-{{#use 'icon'}}
+{{#use 'icon' with=(array 'default' 'required')}}
 <text help-text="{{message}}"
       identifier="{{id}}"
-      label="{{label}}"/>
+      label="{{label}}"
+      {{#if this.default}}default="{{this.default}}"{{/if}}
+      {{#if required}}required="true"{{/if}}/>
 {{/use}}

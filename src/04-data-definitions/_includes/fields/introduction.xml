@@ -5,7 +5,7 @@ message: Insert a brief introduction for the page. This will be used as an intro
 
 variants:
   subtitle:
-    id: subtitle
+    id: introduction
     label: Subtitle
     message: Insert a short subtitle for the page. This will be overlayed on top of the hero image underneath the page title.
   quote:

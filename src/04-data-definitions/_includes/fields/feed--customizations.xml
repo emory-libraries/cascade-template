@@ -8,6 +8,6 @@ label: Feed Customizations
     <checkbox-item label="{{button--label.label}}" show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{button--label.id}}" value="{{button--label.label}}"/>
     <checkbox-item label="{{icon.label}}" show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{icon.id}}" value="{{icon.label}}"/>
   </text>
-  {{> button--label}}
-  {{> icon}}
+  {{> button--label required=true}}
+  {{> icon default='material-rss_feed' required=true}}
 {{/use}}

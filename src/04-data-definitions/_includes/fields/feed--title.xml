@@ -1,7 +1,7 @@
 ---
 id: title
 label: Feed Title
-message: Enter a title to help better identify the feed.
+message: Enter a title to help better identify the feed (i.e., 'Events').
 ---
 
 {{#use 'feed--title'}}

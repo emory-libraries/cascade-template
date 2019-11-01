@@ -5,13 +5,13 @@ label: Feed
 
 {{#use 'feed' with=(array 'multiple' 'max' 'min' 'nesting')}}
 <group identifier="{{id}}" label="{{label}}"{{#if multiple}} multiple="true"{{#if max}} maximum-number="{{max}}"{{/if}}{{#if min}} minimum-number="{{min}}"{{/if}}{{/if}}>
-  {{> version}}
   {{> feed--title}}
   {{> feed--link}}
-  {{> link variation=(objectify label='View All')
-           options=(objectify page=true file=false external=true)
-           customizations=(objectify link=false description=false)
-           nesting=(breadcrumb id)}}
+  {{> link variation=(object label='View All')
+           options=(object page=true file=false external=true)
+           customizations=(object link=false description=false)
+           nesting=(breadcrumb id)
+           required='label'}}
   {{> feed--customizations}}
 </group>
 {{/use}}

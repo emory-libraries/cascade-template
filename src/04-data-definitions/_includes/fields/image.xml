@@ -7,7 +7,6 @@ message:
 {{#use 'image' with=(array 'variation' 'exclude' 'required')}}
 <group identifier="{{id}}{{#if variation.id}}-{{variation.id}}{{/if}}"
        label="{{#if variation.label}}{{variation.label}} {{/if}}{{label}}">
-  {{> version}}
   {{> image--file}}
   {{> image--caption}}
   {{> image--credit}}

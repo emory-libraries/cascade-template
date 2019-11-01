@@ -1,5 +1,4 @@
 <system-data-structure>
-	{{> version}}
 	{{> introduction}}
 	{{> tiles multiple=true}}
 </system-data-structure>

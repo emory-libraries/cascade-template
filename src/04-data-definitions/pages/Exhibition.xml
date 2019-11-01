@@ -1,5 +1,4 @@
 <system-data-structure>
-	{{> version}}
 	{{> badge--label default='Exhibition'}}
 	{{> introduction variant='subtitle'}}
 	{{> hero--image}}

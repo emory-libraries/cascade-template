@@ -5,7 +5,7 @@ label: Section Major - Using the Library
 
 {{#use 'major-using-the-library'}}
 {{#set 'nesting' (breadcrumb id)}}{{/set}}
-<group collapsed="true" identifier="{{id}}" label="{{label}}">
+<group identifier="{{id}}" label="{{label}}">
   {{> heading--label}}
   {{> feature}}
   {{> explorer}}

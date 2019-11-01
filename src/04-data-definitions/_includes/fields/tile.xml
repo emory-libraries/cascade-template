@@ -11,16 +11,17 @@ label: Tile
        {{#if max}}maximum-number="{{max}}"{{/if}}
        {{#if min}}minimum-number="{{min}}"{{/if}}
        {{/if}}>
-    {{#if (includes 'badge' include)}}{{> badge--label}}{{/if}}
+    {{#if (includes 'badge' include)}}{{> badge--label required=true}}{{/if}}
     {{> heading--label variant='context'}}
     {{#> link options=(object page=true file=true url=true)
               customizations=(object label=true description=true)
               multiple=false
-              nesting=(breadcrumb id)}}
+              nesting=(breadcrumb id)
+              required=true}}
       {{#*inline 'link-slot'}}
-        {{> button--label}}
+        {{> button--label default='Learn More' required=true}}
       {{/inline}}
     {{/link}}
-    {{> image}}
+    {{> image required=true}}
 </group>
 {{/use}}

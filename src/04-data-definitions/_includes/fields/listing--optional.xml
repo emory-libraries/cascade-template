@@ -1,0 +1,15 @@
+---
+id: add-listing
+label: Include Listing?
+message: Check this box to include a featured listing on this page.
+---
+
+{{#use 'listing--optional' with='nesting'}}
+<text identifier="{{id}}"
+      label="{{label}}"
+      help-text="{{message}}"
+      type="checkbox">
+  <checkbox-item value="Yes"
+                 show-fields="{{#if nesting}}{{nesting}}/{{/if}}{{listing.id}}"/>
+</text>
+{{/use}}

@@ -4,9 +4,10 @@ label: Hero Image
 message: Select a background image for the page's hero section.
 ---
 
-{{#use 'hero--image'}}
+{{#use 'hero--image' with="required"}}
 <asset help-text="{{message}}"
        identifier="{{id}}"
        label="{{label}}"
-       type="file"/>
+       type="file"
+       {{#if required}}required="true"{{/if}}/>
 {{/use}}

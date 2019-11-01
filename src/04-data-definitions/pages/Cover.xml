@@ -1,7 +1,6 @@
 <system-data-structure>
-  {{> version}}
   {{> introduction variant='subtitle'}}
-  {{> hero--image}}
+  {{> hero--image required=true}}
 	{{> feature}}
 	{{> explorer}}
   {{> tiles include='badge'}}

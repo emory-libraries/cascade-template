@@ -1,7 +1,7 @@
 ---
 id: link-type
 label: Link Type
-message:
+message: Select the type of link that you wish to insert.
 ---
 
 {{#use 'link--type' with=(array 'options' 'nesting' 'required')}}
@@ -20,21 +20,21 @@ message:
   {{/unless}}
   {{#unless (eq options.page false)}}
   <radio-item show-fields="
-    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--page.id}},
-    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--customizations.id}}"
+    {{#if nesting}}{{nesting}}/{{/if}}{{link--page.id}},
+    {{#if nesting}}{{nesting}}/{{/if}}{{link--customizations.id}}"
     value="{{link--page.label}}"/>
   {{/unless}}
   {{#unless (eq options.file false)}}
   <radio-item show-fields="
-    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--file.id}},
-    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--customizations.id}}"
+    {{#if nesting}}{{nesting}}/{{/if}}{{link--file.id}},
+    {{#if nesting}}{{nesting}}/{{/if}}{{link--customizations.id}}"
     value="{{link--file.label}}"/>
   {{/unless}}
   {{#unless (eq options.url false)}}
   <radio-item show-fields="
-    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--url.id}},
-    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--label.id}},
-    {{#if nesting}}{{nesting}}/{{/if}}{{id}}/{{link--description.id}}"
+    {{#if nesting}}{{nesting}}/{{/if}}{{link--url.id}},
+    {{#if nesting}}{{nesting}}/{{/if}}{{link--label.id}},
+    {{#if nesting}}{{nesting}}/{{/if}}{{link--description.id}}"
     value="{{link--url.label}}"/>
   {{/unless}}
 </text>

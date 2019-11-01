@@ -4,11 +4,12 @@ label: Link Description
 message: Enter a custom description to accompany the link.
 ---
 
-{{#use 'link--description' with=(array 'customizations' 'force')}}
+{{#use 'link--description' with=(array 'customizations' 'force' 'required')}}
 {{#if (or (neq customizations.description false) (includes 'description' force))}}
 <text help-text="{{message}}"
       identifier="{{id}}"
       label="{{label}}"
-      multi-line="true"/>
+      multi-line="true"
+      {{#if (or (eq required true) (includes 'description' required))}}required="true"{{/if}}/>
 {{/if}}
 {{/use}}

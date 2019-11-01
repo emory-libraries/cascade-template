@@ -5,9 +5,15 @@ config:
 ---
 
 {{#use 'major-feed-preview' with='include'}}
+{{#unless required}}
+  {{> major--optional id='add-feeds'
+                      label='Include Feeds Section?'
+                      message='Check this box to include a Feeds section on this page.'
+                      toggles=this}}
+{{/unless}}
 {{#set 'nesting' (breadcrumb id)}}{{/set}}
-<group id="{{id}}" label="{{label}}">
-  {{> heading--label}}
+<group identifier="{{id}}" label="{{label}}">
+  {{> heading--label required=true default='Upcoming'}}
   {{#if (includes 'listing' include)}}{{> listing}}{{/if}}
   {{> feed-flow}}
 </group>
